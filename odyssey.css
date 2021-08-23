@@ -1,0 +1,4332 @@
+:root {
+  --font: "Archivo", sans-serif;
+  --font-display: "Archivo Narrow", sans-serif;
+  --retro: "Press Start 2P", cursive;
+  --violet: #af0eaf;
+  --blue: #01589b;
+  --hotpink: #e94057;
+  --orange: #f27121;
+  --red: #ff0000;
+  --green: #11a40e;
+  --gradient: linear-gradient(35deg, var(--violet), var(--hotpink));
+  --white: #ffffff;
+  --black: rgba(0, 0, 0, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: auto;
+  min-height: 100vh;
+  background: var(--black);
+  font-family: var(--font);
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.bienvenida {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--black);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 1;
+}
+
+.bienvenida.visible,
+.avatar.visible {
+  display: flex;
+}
+
+.bienvenida h1 {
+  font-family: var(--retro);
+  color: var(--white);
+  font-size: 6rem;
+  padding-top: 120px;
+}
+
+h1 {
+  animation: focus 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes focus {
+  0% {
+    letter-spacing: 1em;
+    transform: translateZ(300px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateZ(12px);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.bienvenida-botones {
+  display: flex;
+}
+
+.bienvenida button {
+  font-family: var(--retro);
+  padding: 1rem 3rem;
+  margin: 0 1rem;
+}
+
+button.settings {
+  font-size: 14px;
+  margin-top: 25px;
+  animation: escribir 2s 2.5s both;
+}
+
+.pantalla-uno,
+.pantalla-settings,
+.datos {
+  display: none;
+  color: var(--white);
+  font-family: var(--retro);
+}
+
+.coded {
+  font-family: var(--retro);
+  font-size: 12px;
+  color: var(--white);
+  display: flex;
+  padding-top: 110px;
+  padding-right: 20px;
+  align-self: flex-end;
+  animation: escribir 2s 3s both;
+}
+
+.juego-story {
+  animation: escribir 2s 2s both;
+}
+
+.juego-relax {
+  animation: escribir 2s 2s both;
+}
+
+.coded a,
+.coded a:link,
+.coded a:visited,
+.coded a:hover,
+.coded a:active {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.informacionJuego {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.howTo {
+  width: 800px;
+  height: 280px;
+  margin: auto;
+}
+
+.explicacion {
+  font-size: 17px;
+  text-align: justify;
+  padding: 15px;
+}
+
+.back3 {
+  width: 35%;
+  font-size: 15px;
+  margin: auto;
+}
+
+.datos p {
+  font-size: 24px;
+  padding: 30px;
+  line-height: 1.2;
+  animation: escribir 2s forwards;
+  text-align: center;
+}
+
+#mensaje-datos2.visible,
+#mensaje-datos3.visible,
+#mensaje-datos4.visible,
+#mensaje-datos5.visible,
+#mensaje-datos6.visible,
+#mensaje-datos7.visible,
+#mensaje-datos8.visible,
+#mensaje-datos9.visible,
+#mensaje-datos10.visible,
+#mensaje-datos11.visible,
+#mensaje-datosfinal.visible,
+#mensaje-creditos.visible,
+.telefono.visible,
+.telefonomob.visible {
+  display: flex;
+}
+
+#mensaje-datos {
+  display: flex;
+  color: var(--white);
+  font-family: var(--retro);
+  font-size: 25px;
+  padding: 30px;
+  line-height: 1.2;
+  text-align: center;
+}
+#mensaje-datos2,
+#mensaje-datos3,
+#mensaje-datos4,
+#mensaje-datos5,
+#mensaje-datos6,
+#mensaje-datos7,
+#mensaje-datos8,
+#mensaje-datos9,
+#mensaje-datos10,
+#mensaje-datos11,
+#mensaje-datosfinal,
+#mensaje-creditos,
+.telefono,
+.telefonomob {
+  display: none;
+  color: var(--white);
+  font-family: var(--retro);
+  font-size: 20px;
+  padding: 30px;
+  line-height: 1.2;
+  flex-direction: column;
+  text-align: center;
+}
+
+#mensaje-datosfinal,
+#mensaje-creditos {
+  color: var(--black);
+}
+
+#mensaje-datos3 {
+  margin-top: -15px;
+}
+
+#mensaje-datos10 {
+  animation: reaparecer2 4s 11s both;
+  font-size: 90px;
+  margin-top: -120px;
+}
+
+@keyframes reaparecer2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.lookg.visible,
+.lookp.visible,
+.lookgato.visible,
+.lookperro.visible {
+  display: flex;
+}
+
+.lookg,
+.lookp {
+  display: none;
+  width: 100%;
+  height: 500px;
+  margin-top: -450px;
+  background-color: var(--white);
+  animation: look 1s 15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes look {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.lookgato,
+.lookperro {
+  display: none;
+  width: 500px;
+  height: 500px;
+  animation: look2 1s 16s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes look2 {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(450px);
+    opacity: 1;
+  }
+}
+
+#mensaje-datos8 {
+  padding: 15px;
+}
+
+#mensaje-datos9 {
+  padding: 15px;
+  margin-top: -70px;
+}
+
+#mensaje-datos7 {
+  margin-top: -200px;
+}
+
+#mensaje-datos.animacion0,
+#mensaje-datos2.animacion0,
+#mensaje-datos3.animacion0,
+#mensaje-datos4.animacion0 {
+  animation: escribir 5s forwards;
+}
+
+#mensaje1.animacion0 {
+  animation: escribir 5s 2s both;
+}
+
+#mensaje2.animacion0 {
+  animation: escribir 5s 4s both;
+}
+
+.telefono.animacion0,
+.telefonomob.animacion0 {
+  animation: escribir 2s both;
+}
+
+.mensaje-datos5 {
+  animation: poppin 2s 12s both;
+}
+
+@keyframes poppin {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.mensaje-datos6 {
+  animation: poppin2 2s 14s both;
+  margin-top: -250px;
+}
+
+.mensaje-datos7,
+.mensaje-datos8,
+.mensaje-datos9,
+.mensaje-datos11 {
+  animation: poppin2 2s 2s both;
+}
+
+@keyframes poppin2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.mensaje-datos9.animaciondesaparecer {
+  animation: animaciondesaparecer 5s 2s both;
+}
+
+@keyframes animaciondesaparecer {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.correcto1,
+.incorrecto1,
+.incorrecto2,
+.incorrecto3,
+.incorrecto4 {
+  margin: 10px auto 10px auto;
+  width: 50%;
+}
+
+.correcto2 {
+  display: none;
+  margin: 10px auto 10px auto;
+  width: 75%;
+}
+
+.rise {
+  display: none;
+  margin: -10px auto 10px auto;
+  width: 50%;
+  animation: poppin2 2s 5s auto;
+}
+
+.correcto2b {
+  margin: 50px auto 10px auto;
+  display: none;
+  text-align: center;
+  width: 100%;
+}
+
+.subir2,
+.subir3,
+.subir4,
+.subir5 {
+  display: none;
+  margin: auto;
+  width: 20%;
+}
+
+.subir2,
+.subir3,
+.subir4,
+.subir5 {
+  animation: botonshow 2s 2s both;
+}
+
+.subir5 {
+  margin-top: 70px;
+}
+
+@keyframes botonshow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.opcion-pelear2 {
+  display: none;
+  font-size: 18px;
+}
+
+.opcion-pelear3 {
+  display: none;
+  position: absolute;
+  top: 250px;
+  right: 48px;
+  font-size: 18px;
+}
+
+.opcion-pelear4 {
+  display: none;
+  position: absolute;
+  top: 265px;
+  left: 69px;
+  font-size: 18px;
+}
+
+.opcion-pelear5 {
+  display: none;
+  position: absolute;
+  top: 270px;
+  left: 223px;
+  font-size: 18px;
+}
+
+.opcion-pelear6,
+.opcion-pelear8 {
+  display: none;
+  position: absolute;
+  top: 270px;
+  font-size: 18px;
+}
+
+.opcion-pelear7,
+.opcion-pelear7mob {
+  display: none;
+  color: var(--white);
+  font-family: var(--retro);
+  font-size: 20px;
+  text-align: center;
+  padding: 30px;
+  line-height: 1.2;
+}
+
+#opciones1.animacion0,
+#opciones2.animacion0,
+#opciones3.animacion0,
+#opciones5.animacion0,
+#opciones6.animacion0 {
+  animation: escribir 5s 2.5s both;
+}
+
+#opcion-decision.animacion0 {
+  animation: escribir 3s 3s both;
+}
+
+@keyframes escribir {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.monstruo1,
+.monstruo1r {
+  display: none;
+  width: 280px;
+  height: 280px;
+  margin: 0;
+}
+
+.lvlgato1,
+.lvlgato2,
+.lvlgato3,
+.lvlgato4,
+.lvlgatofinal,
+.lvlgatofinalb,
+.lvlgatofinalbr,
+.lvlperro1,
+.lvlperro2,
+.lvlperro3,
+.lvlperro4,
+.lvlperrofinal,
+.lvlperrofinalb,
+.lvlperrofinalbr,
+.personajegato,
+.personajeperro,
+.personajegatob,
+.personajeperrob,
+.personajegatobr,
+.personajeperrobr,
+.arrow,
+.arrow2,
+.arrow3,
+.arrow4 {
+  display: none;
+  width: 280px;
+  height: 280px;
+}
+
+.lvlgatofinalb,
+.lvlperrofinalb,
+.lvlgatofinalbr,
+.lvlperrofinalbr {
+  margin-left: 130px;
+}
+
+.arrow,
+.arrow2,
+.arrow3,
+.arrow4 {
+  animation: showa 1s 2s both;
+}
+
+@keyframes showa {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.info1,
+.info2,
+.info3,
+.info4,
+.info5,
+.info6 {
+  display: none;
+  font-family: var(--retro);
+  color: var(--white);
+}
+
+.info1 h3,
+.info2 h3,
+.info3 h3,
+.info4 h3,
+.info5 h3,
+.info6 h3 {
+  font-size: 28px;
+  text-align: center;
+}
+
+.info1 p,
+.info2 p,
+.info3 p,
+.info4 p,
+.info6 p {
+  font-size: 17px;
+  text-align: center;
+}
+
+.info1.show1,
+.info2.show1,
+.info3.show1,
+.info4.show1,
+.info5.show1 {
+  animation: show1 1s 1.5s both;
+}
+
+.info6.show1 {
+  animation: show1 2s 2s both;
+}
+
+@keyframes show1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.info2.show2,
+.info3.show2,
+.info4.show2,
+.info5.show2 {
+  animation: show2 1s 2.5s both;
+}
+
+@keyframes show2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.monstruo1.animacion1,
+.monstruo2.animacion1,
+.monstruo3.animacion1,
+.monstruo4g.animacion1,
+.monstruo4p.animacion1 {
+  animation: bounce-in-right 1.1s both;
+}
+
+.personaje1.animacionentrada,
+.personaje2.animacionentrada,
+.personajegato.animacionentrada,
+.personajeperro.animacionentrada,
+.personajegatob.animacionentrada,
+.personajeperrob.animacionentrada,
+.stg2gato.animacionentrada,
+.stg3gato.animacionentrada,
+.stg4gato.animacionentrada,
+.stg2perro.animacionentrada,
+.stg3perro.animacionentrada,
+.stg4perro.animacionentrada {
+  animation: bounce-in-left 1.1s both;
+}
+
+.personaje1.animacioncomienzo {
+  animation: comienzo 1.1s 2s both;
+}
+
+.personaje2.animacioncomienzo {
+  animation: comienzo 1.1s 2.5s both;
+}
+
+.monstruo1.animacion3,
+.monstruo2b.animacion3,
+.monstruo4gb.animacion3,
+.monstruo4pb.animacion3,
+.monstruogfinalb.animacion3,
+.monstruopfinalb.animacion3 {
+  animation: movimiento2 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.monstruo3b.animacion3b {
+  animation: animacion3b 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes comienzo {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-in-right {
+  0% {
+    transform: translateX(600px);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  55% {
+    transform: translateX(68px);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  81% {
+    transform: translateX(32px);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateX(8px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(0);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+}
+
+@keyframes bounce-in-left {
+  0% {
+    transform: translateX(-600px);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+  38% {
+    transform: translateX(150px);
+    animation-timing-function: ease-out;
+  }
+  55% {
+    transform: translateX(90px);
+    animation-timing-function: ease-in;
+  }
+  72% {
+    transform: translateX(150px);
+    animation-timing-function: ease-out;
+  }
+  81% {
+    transform: translateX(122px);
+    animation-timing-function: ease-in;
+  }
+  90% {
+    transform: translateX(150px);
+    animation-timing-function: ease-out;
+  }
+  95% {
+    transform: translateX(142px);
+    animation-timing-function: ease-in;
+  }
+  100% {
+    transform: translateX(150px);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+}
+
+@keyframes movimiento2 {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    margin-top: 0;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 1;
+    margin-top: 75px;
+    margin-right: 80px;
+  }
+}
+
+@keyframes animacion3b {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    margin-top: 0;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 1;
+    margin-top: 75px;
+    margin-right: 80px;
+    margin-left: 50px;
+  }
+}
+
+.stg2gato,
+.stg2gator,
+.stg3gato,
+.stg3gator,
+.stg4gato,
+.stg4gator,
+.stg2perro,
+.stg2perror,
+.stg3perro,
+.stg3perror,
+.stg4perro,
+.stg4perror,
+.monstruo2,
+.monstruo2r,
+.monstruo3,
+.monstruo3r,
+.monstruo4g,
+.monstruo4gr,
+.monstruo4g2,
+.monstruo4p,
+.monstruo4pr,
+.monstruo4p2,
+.monstruo2b,
+.monstruo3b,
+.monstruo4gb,
+.monstruo4pb,
+.monstruogfinalb,
+.monstruopfinalb {
+  display: none;
+  width: 250px;
+  height: 250px;
+}
+
+.monstruoformafinalg,
+.monstruoformafinalp,
+.monstruoformafinalgr,
+.monstruoformafinalpr {
+  display: none;
+  width: 600px;
+  height: 350px;
+  margin-right: 650px;
+}
+
+.gatocierre,
+.clauhaus,
+.perrocierre {
+  display: none;
+  width: 300px;
+  height: 300px;
+  animation: cierre 2s both;
+}
+
+.clauhaus {
+  animation: cierre 2s 5s both;
+  width: 420px;
+  height: 420px;
+}
+
+.perrocierre {
+  animation: cierre 2s 3s both;
+}
+
+.mensaje-datosfinal {
+  animation: cierre 2s 7s both;
+}
+
+.mensaje-creditos {
+  margin-top: -20px;
+  animation: cierre 2s 2s both;
+}
+
+.credits {
+  animation: cierre 2s 9s both;
+  margin-top: -70px;
+}
+
+.replay,
+.replayrelax {
+  animation: cierre 2s 5s both;
+}
+
+.credits:hover,
+.replay:hover,
+.replayrelax:hover {
+  border: 1px solid var(--black);
+  box-shadow: 0 0 6px var(--black);
+  outline: none;
+  background-color: var(--white);
+  color: var(--black);
+}
+
+@keyframes cierre {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.monstruo1final,
+.monstruo2final,
+.monstruo3final {
+  display: none;
+  width: 200px;
+  height: 200px;
+  animation: jefes 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  margin-left: -32px;
+  margin-right: -32px;
+}
+
+@keyframes jefes {
+  0% {
+    transform: translateX(800px) rotateY(-30deg) scale(0);
+    transform-origin: -100% 50%;
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) rotateY(0) scale(1);
+    transform-origin: -1800px 50%;
+    opacity: 1;
+  }
+}
+
+.monstruo1final.jefesout,
+.monstruo2final.jefesout,
+.monstruo3final.jefesout {
+  animation: jefesout 1s ease-in both;
+}
+
+@keyframes jefesout {
+  0% {
+    transform: translateX(0) rotateY(0) scale(1);
+    transform-origin: -1800px 50%;
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(1000px) rotateY(-30deg) scale(0);
+    transform-origin: -100% 50%;
+    opacity: 1;
+  }
+}
+
+.stggatocaido,
+.stgperrocaido {
+  display: none;
+  width: 400px;
+  height: 400px;
+  margin-top: -40px;
+}
+
+.stggatocaido.animacionreaparecer,
+.stgperrocaido.animacionreaparecer {
+  animation: animacionreaparecer 10s 2s both;
+}
+
+@keyframes animacionreaparecer {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.monstruogfinal,
+.monstruopfinal,
+.monstruogfinalr,
+.monstruopfinalr {
+  display: none;
+  width: 300px;
+  height: 300px;
+  margin-right: 130px;
+}
+
+.phone {
+  display: none;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 200px;
+  right: 500px;
+  cursor: grab;
+  color: var(--white);
+  animation: celular 10s 2s 2 both;
+}
+
+@keyframes celular {
+  0% {
+    transform: translateY(25px) translateX(50px);
+  }
+  10% {
+    transform: translateY(-180px) translateX(-260px);
+  }
+  20% {
+    transform: translateY(338px) translateX(-180px);
+  }
+  30% {
+    transform: translateY(0px) translateX(-180px);
+  }
+  40% {
+    transform: translateY(-50px) translateX(20px);
+  }
+  50% {
+    transform: translateY(200px) translateX(-400px);
+  }
+  60% {
+    transform: translateY(-50px) translateX(250px);
+  }
+  70% {
+    transform: translateY(238px) translateX(-550px);
+  }
+  80% {
+    transform: translateY(20px) translateX(350px);
+  }
+  90% {
+    transform: translateY(-20px) translateX(-630px);
+  }
+  95% {
+    transform: translateY(0px) translateX(0px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
+.trash {
+  display: none;
+  margin-top: 150px;
+  float: right;
+  width: 150px;
+  border: none;
+  margin-top: 40px;
+  margin-left: 1000px;
+}
+
+.hablar1,
+.hablar3,
+.hablar5 {
+  font-family: var(--retro);
+  color: var(--white);
+  font-size: 16px;
+  display: none;
+  position: absolute;
+  top: 90px;
+  right: 300px;
+  animation: animacionhablar1 2s both;
+}
+
+.hablar5 {
+  display: none;
+  animation: animacionhablar1 4s both;
+  right: 80px;
+}
+
+.hablar5mob {
+  display: none;
+  animation: animacionhablar1 7s both;
+  right: 80px;
+  top: 120px;
+  position: absolute;
+  color: var(--white);
+  font-family: var(--retro);
+}
+
+.hablar6 {
+  font-family: var(--retro);
+  color: var(--white);
+  font-size: 16px;
+  display: none;
+  position: absolute;
+  top: 90px;
+  right: 300px;
+  animation: animacionhablar2 2s 4s both;
+}
+
+.hablar8 {
+  font-family: var(--retro);
+  color: var(--white);
+  font-size: 16px;
+  display: none;
+  position: absolute;
+  top: 90px;
+  right: 300px;
+  animation: animacionhablar2 2s 8s both;
+}
+
+.hablar10 {
+  font-family: var(--retro);
+  color: var(--white);
+  font-size: 16px;
+  display: none;
+  position: absolute;
+  top: 90px;
+  right: 300px;
+  animation: animacionhablar2 7s 7s both;
+}
+
+.hablar11 {
+  font-family: var(--retro);
+  color: var(--white);
+  font-size: 16px;
+  display: none;
+  position: absolute;
+  top: 120px;
+  right: 250px;
+  animation: animacionhablar2 2s 2s both;
+}
+
+.hablar12 {
+  font-family: var(--retro);
+  color: var(--white);
+  font-size: 16px;
+  display: none;
+  position: absolute;
+  top: 150px;
+  left: 110px;
+  animation: animacionhablar2 2s 4s both;
+}
+
+.hablar13 {
+  font-family: var(--retro);
+  color: var(--white);
+  font-size: 16px;
+  display: none;
+  position: absolute;
+  top: 90px;
+  right: 265px;
+  animation: animacionhablar2 2s 6s both;
+}
+
+.hablar14 {
+  font-family: var(--retro);
+  color: var(--white);
+  font-size: 16px;
+  display: none;
+  position: absolute;
+  top: 90px;
+  left: 250px;
+  animation: animacionhablar2 2s 8s both;
+}
+
+.hablar2,
+.hablar4,
+.hablar4mob {
+  font-family: var(--retro);
+  color: var(--white);
+  font-size: 16px;
+  display: none;
+  position: absolute;
+  top: 90px;
+  left: 300px;
+  animation: animacionhablar1 2s both;
+}
+
+.hablar4mob {
+  animation: animacionhablar1 4s both;
+}
+
+.hablar7 {
+  font-family: var(--retro);
+  color: var(--white);
+  font-size: 16px;
+  display: none;
+  position: absolute;
+  top: 90px;
+  left: 300px;
+  animation: animacionhablar2 2s 6s both;
+}
+
+.hablar9 {
+  font-family: var(--retro);
+  color: var(--white);
+  font-size: 16px;
+  display: none;
+  position: absolute;
+  top: 90px;
+  left: 300px;
+  animation: animacionhablar2 2s 10s both;
+}
+
+@keyframes animacionhablar1 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes animacionhablar2 {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.stage2,
+.stage3,
+.stage4,
+.stage5,
+.stage6 {
+  display: none;
+  justify-content: space-around;
+  padding-top: 20px;
+}
+
+.stage6 {
+  background-color: var(--white);
+  margin-top: -50px;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.miweb {
+  color: var(--black);
+  background-color: var(--white);
+  font-family: var(--retro);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+  font-size: 18px;
+  animation: focus 3s 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.miweb.visible {
+  display: flex;
+}
+
+.formulario {
+  border: 2px solid var(--white);
+  margin: 10px auto 0px auto;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  padding: 30px;
+  animation: escribir 2s ease-out forwards;
+}
+
+label {
+  display: flex;
+  width: 80%;
+}
+
+input {
+  width: 100%;
+  margin: 20px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #666;
+  border-radius: 5px;
+  padding: 3px;
+  font-family: var(--retro);
+}
+
+input:focus {
+  border: 1px solid var(--white);
+  box-shadow: 0 0 6px var(--white);
+  outline: none;
+}
+
+.nombre::placeholder,
+.fecha::placeholder {
+  color: var(--black);
+  font-size: 16px;
+}
+
+.pantalla-uno.visible,
+.pantalla-settings.visible,
+.datos.visible,
+.mensaje1.visible,
+.mensaje2.visible,
+.info1.visible,
+.info2.visible,
+.info3.visible,
+.info4.visible,
+.info5.visible,
+.info6.visible,
+.opcion-pelear2.visible,
+.opcion-pelear3.visible,
+.opcion-pelear4.visible,
+.opcion-pelear5.visible,
+.opcion-pelear6.visible,
+.opcion-pelear7.visible,
+.opcion-pelear7mob.visible,
+.opcion-pelear8.visible,
+.hablar1.visible,
+.hablar2.visible,
+.hablar3.visible,
+.hablar4.visible,
+.hablar4mob.visible,
+.hablar5.visible,
+.hablar5mob.visible,
+.hablar6.visible,
+.hablar7.visible,
+.hablar8.visible,
+.hablar9.visible,
+.hablar10.visible,
+.hablar11.visible,
+.hablar12.visible,
+.hablar13.visible,
+.hablar14.visible,
+.subir2.visible,
+.subir3.visible,
+.subir4.visible,
+.subir5.visible,
+.rise.visible,
+.correcto2.visible,
+.correcto2b.visible {
+  display: flex;
+  flex-direction: column;
+}
+
+.dormir.visible,
+.dormir2.visible,
+.dormir3.visible,
+.dormir4.visible {
+  display: block;
+  margin: auto;
+}
+
+.okey1.visible,
+.okey2.visible,
+.okey4.visible,
+.okey5.visible,
+.okey6.visible,
+.okey7.visible,
+.okey8.visible,
+.okeyfinal1.visible,
+.okeyfinal2.visible,
+.okeyfinal3.visible,
+.okeyfinal4.visible,
+.okeyfinal5.visible,
+.okeyfinal6.visible,
+.okeyfinal7.visible,
+.okeyfinal8.visible,
+.okeyfinal9.visible,
+.okeyfinal10.visible,
+.okeyfinal11.visible,
+.wrong1.visible,
+.wrong2.visible,
+.wrong4.visible,
+.wrong5.visible,
+.wrong6.visible,
+.wrong7.visible,
+.wrong8.visible,
+.wrong9.visible,
+.wrong10.visible,
+.peligro.visible,
+.lvlgato1.visible,
+.lvlgato2.visible,
+.lvlgato3.visible,
+.lvlgato4.visible,
+.lvlgatofinal.visible,
+.lvlgatofinalb.visible,
+.lvlgatofinalbr.visible,
+.lvlperro1.visible,
+.lvlperro2.visible,
+.lvlperro3.visible,
+.lvlperro4.visible,
+.lvlperrofinal.visible,
+.lvlperrofinalb.visible,
+.lvlperrofinalbr.visible,
+.arrow.visible,
+.arrow2.visible,
+.arrow3.visible,
+.arrow4.visible,
+.stg2gato.visible,
+.stg2gator.visible,
+.stg3gato.visible,
+.stg3gator.visible,
+.stg4gato.visible,
+.stg4gator.visible,
+.stggatocaido.visible,
+.stg2perro.visible,
+.stg2perror.visible,
+.stg3perro.visible,
+.stg3perror.visible,
+.stg4perro.visible,
+.stg4perror.visible,
+.stgperrocaido.visible,
+.monstruo2.visible,
+.monstruo2r.visible,
+.monstruo3.visible,
+.monstruo3r.visible,
+.monstruo4g.visible,
+.monstruo4gr.visible,
+.monstruo4g2.visible,
+.monstruogfinal.visible,
+.monstruogfinalr.visible,
+.monstruo4p.visible,
+.monstruo4pr.visible,
+.monstruopfinal.visible,
+.monstruopfinalr.visible,
+.monstruo4p2.visible,
+.monstruo2b.visible,
+.monstruo3b.visible,
+.monstruo4gb.visible,
+.monstruo4pb.visible,
+.monstruogfinalb.visible,
+.monstruopfinalb.visible,
+.phone.visible,
+.trash.visible,
+.monstruo1final.visible,
+.monstruo2final.visible,
+.monstruo3final.visible,
+.monstruoformafinalg.visible,
+.monstruoformafinalp.visible,
+.monstruoformafinalgr.visible,
+.monstruoformafinalpr.visible,
+.gatocierre.visible,
+.clauhaus.visible,
+.perrocierre.visible {
+  display: block;
+}
+
+.dormir img,
+.dormir2 img,
+.dormir3 img,
+.dormir4 img {
+  width: 400px;
+  height: 400px;
+}
+
+.dormir.escribir,
+.dormir2.escribir,
+.dormir3.escribir,
+.dormir4.escribir {
+  animation: escribir 4s ease-in-out both;
+}
+
+.lvlgato4.animaciontiraizq,
+.lvlperro4.animaciontiraizq,
+.leveling.animaciontiraizq,
+.arrow4.animaciontiraizq,
+.info4.animaciontiraizq,
+.next13.animaciontiraizq {
+  animation: tiraizquierda 5s 4s ease-in both;
+}
+
+@keyframes tiraizquierda {
+  0% {
+    transform: translateX(-5px);
+    opacity: 1;
+  }
+  10% {
+    transform: translateX(-10px);
+  }
+  20% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(-1500px);
+    opacity: 0;
+  }
+}
+
+.monstruo4g2.acomodacentro,
+.monstruo4p2.acomodacentro {
+  animation: acomodacentro 7s 7s both;
+}
+
+@keyframes acomodacentro {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scale(1.5) translateX(-400px) translateY(150px);
+  }
+  50% {
+    transform: scale(2) translateX(-400px);
+  }
+  100% {
+    transform: scale(2.5) translateX(-400px);
+    opacity: 0;
+  }
+}
+
+.opciones1.visible,
+.opciones2.visible,
+.opciones3.visible,
+.opciones4.visible,
+.opciones5.visible,
+.opciones6.visible {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.botonera.visible,
+.stage2.visible,
+.stage3.visible,
+.stage4.visible,
+.stage5.visible,
+.stage6.visible {
+  display: flex;
+  flex-direction: row;
+}
+
+.opcion-decision.visible {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 150px auto 0 auto;
+  width: 20%;
+}
+
+.mensaje1 {
+  display: none;
+  color: var(--white);
+  font-family: var(--retro);
+  font-size: 18px;
+  padding: 20px;
+  margin: 10px auto -10px auto;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.mensaje2 {
+  display: none;
+  color: var(--white);
+  font-family: var(--retro);
+  font-size: 16px;
+  width: 90%;
+  padding: 10px;
+  margin: 10px auto 0px auto;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.opciones1,
+.opciones2,
+.opciones3,
+.opciones4,
+.opciones5,
+.opciones6,
+.opcion-decision {
+  display: none;
+}
+
+.dormir,
+.dormir2,
+.dormir3,
+.dormir4 {
+  display: none;
+}
+
+.cuadro1,
+.cuadro2 {
+  display: none;
+  opacity: 0;
+  height: 0.1px;
+  font-size: 0.1px;
+  background-color: var(--red);
+}
+
+.cabecera {
+  padding: 10px 120px 10px 120px;
+  background: var(--black);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.cabecera-titulo {
+  font-family: var(--retro);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--white);
+  text-align: center;
+}
+
+.titulorelax,
+.titulorrelax {
+  font-family: var(--retro);
+  font-weight: 600;
+  font-size: 35px;
+  line-height: 1;
+  margin: 0;
+  color: var(--white);
+  text-align: center;
+  display: none;
+  margin-top: 20px;
+}
+
+.titulorelax.visible,
+.titulorrelax.visible {
+  display: block;
+}
+
+#situacion {
+  font-size: 18px;
+}
+
+#tiempo {
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.cabecera-num {
+  font-family: var(--retro);
+  color: var(--white);
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 0.9;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.numeros {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.campeon {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.campeon.relax1,
+.cabecera-titulo.relax1,
+.exito.relax1,
+.salida.relax1,
+.salidarelax.relax1 {
+  opacity: 0;
+}
+
+#timer {
+  border: 5px solid var(--white);
+  padding: 20px;
+}
+
+#timer.brillo {
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px var(--white), 0 0 20px var(--white),
+      0 0 30px var(--red), 0 0 40px var(--red), 0 0 50px var(--red),
+      0 0 60px var(--red), 0 0 70px var(--red);
+  }
+  to {
+    text-shadow: 0 0 20px var(--white), 0 0 30px var(--red), 0 0 40px var(--red),
+      0 0 50px var(--red), 0 0 60px var(--red), 0 0 70px var(--red),
+      0 0 80px var(--red);
+  }
+}
+
+.enemigo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.errores.animacionrojo,
+.aciertos.animacionrojo {
+  animation: animacionrojo 0.5s backwards;
+}
+
+@keyframes animacionrojo {
+  0% {
+    color: var(--white);
+  }
+  100% {
+    color: var(--red);
+  }
+}
+
+.errores.animacionrojo1,
+.aciertos.animacionrojo1 {
+  animation: animacionrojo1 0.5s backwards;
+}
+
+@keyframes animacionrojo1 {
+  0% {
+    color: var(--white);
+  }
+
+  100% {
+    color: var(--red);
+  }
+}
+
+.okey1,
+.okey2,
+.okey4,
+.okey5,
+.okey6,
+.okey7,
+.okey8,
+.okeyfinal5,
+.okeyfinal6,
+.okeyfinal7,
+.okeyfinal8,
+.okeyfinal9,
+.okeyfinal10,
+.okeyfinal11 {
+  display: none;
+  font-family: var(--retro);
+  color: var(--white);
+  font-size: 20px;
+  position: absolute;
+  top: 240px;
+  right: 470px;
+  animation: subida 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  text-align: center;
+  animation: okeymovimiento 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+.okeyfinal1,
+.okeyfinal2,
+.okeyfinal3,
+.okeyfinal4 {
+  display: none;
+  font-family: var(--retro);
+  color: var(--white);
+  font-size: 20px;
+  position: absolute;
+  top: 240px;
+  right: 300px;
+  animation: subida 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  text-align: center;
+  animation: okeymovimiento 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@keyframes okeymovimiento {
+  00% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+
+.wrong1,
+.wrong2,
+.wrong4,
+.wrong5,
+.wrong6,
+.wrong7,
+.wrong8,
+.wrong9,
+.wrong10 {
+  display: none;
+  font-family: var(--retro);
+  color: var(--white);
+  font-size: 20px;
+  position: absolute;
+  top: 240px;
+  left: 385px;
+  text-align: center;
+  animation: wrongmovimiento 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@keyframes wrongmovimiento {
+  00% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+}
+
+.okey1.wrongmovimiento2,
+.okey2.wrongmovimiento2,
+.okey4.wrongmovimiento2,
+.okey5.wrongmovimiento2,
+.okey6.wrongmovimiento2,
+.okey7.wrongmovimiento2,
+.okey8.wrongmovimiento2,
+.okeyfinal1.wrongmovimiento2,
+.okeyfinal2.wrongmovimiento2,
+.okeyfinal3.wrongmovimiento2,
+.okeyfinal4.wrongmovimiento2,
+.okeyfinal5.wrongmovimiento2,
+.okeyfinal6.wrongmovimiento2,
+.okeyfinal7.wrongmovimiento2,
+.okeyfinal8.wrongmovimiento2,
+.okeyfinal9.wrongmovimiento2,
+.okeyfinal10.wrongmovimiento2,
+.okeyfinal11.wrongmovimiento2,
+.wrong1.wrongmovimiento2,
+.wrong2.wrongmovimiento2,
+.wrong4.wrongmovimiento2,
+.wrong5.wrongmovimiento2,
+.wrong6.wrongmovimiento2,
+.wrong7.wrongmovimiento2,
+.wrong8.wrongmovimiento2,
+.wrong9.wrongmovimiento2,
+.wrong10.wrongmovimiento2 {
+  color: var(--black);
+  top: -240px;
+}
+
+.versus {
+  display: none;
+  font-family: var(--retro);
+  color: var(--white);
+  font-size: 80px;
+  position: absolute;
+  top: 260px;
+  left: 480px;
+  text-align: center;
+  animation: blur-out-contract-bck 1s 3s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+    both;
+}
+
+@keyframes blur-out-contract-bck {
+  0% {
+    transform: translateZ(0);
+    filter: blur(0.01);
+  }
+  100% {
+    letter-spacing: -0.5em;
+    transform: translateZ(-500px);
+    filter: blur(12px) opacity(0);
+  }
+}
+
+.peligro {
+  display: none;
+  font-family: var(--retro);
+  color: var(--white);
+  font-size: 200px;
+  position: absolute;
+  top: 200px;
+  margin-left: 70px;
+  text-align: center;
+  animation: danger 2s both;
+}
+
+@keyframes danger {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.campeon.vibrate,
+.enemigo.vibrate {
+  animation: vibrate 0.5s linear infinite both;
+}
+
+@keyframes vibrate {
+  0% {
+    transform: translate(0);
+  }
+  10% {
+    transform: translate(-2px, -2px);
+  }
+  20% {
+    transform: translate(2px, -2px);
+  }
+  30% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(2px, 2px);
+  }
+  50% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, -2px);
+  }
+  70% {
+    transform: translate(-2px, 2px);
+  }
+  80% {
+    transform: translate(-2px, -2px);
+  }
+  90% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+main.cambiocolor,
+.cabecera.cambiocolor,
+.heroes.cambiocolor,
+.personaje1.cambiocolor,
+.personaje2.cambiocolor,
+.stage2.cambiocolor,
+.stage3.cambiocolor,
+.stage4.cambiocolor,
+.stage5.cambiocolor {
+  background-color: #ff0000;
+}
+
+.skull,
+.reloj,
+.salida {
+  width: 200px;
+  height: 200px;
+}
+
+.exito {
+  width: 250px;
+  height: 250px;
+}
+
+.medal,
+.exitorelax {
+  width: 250px;
+  height: 250px;
+  display: none;
+  margin-top: -200px;
+}
+
+.medal.visible,
+.exitorelax.visible {
+  display: block;
+}
+
+.leveling {
+  font-family: var(--retro);
+  color: var(--white);
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 0 auto;
+  display: none;
+  font-size: 50px;
+  animation: tracking-in-expand 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+@keyframes tracking-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.rise.vanish,
+.stggatocaido.vanish,
+.stgperrocaido.vanish {
+  animation: vanish 1s 15s both;
+}
+
+@keyframes vanish {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.levelup {
+  display: none;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.leveluptext {
+  display: none;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.mesa {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 90%;
+}
+
+.tarjeta {
+  width: 4.9rem;
+  height: 4.9rem;
+  margin: 0.3rem;
+  border-radius: 0.1em;
+  background: linear-gradient(315deg, transparent 75%, var(--hotpink) 0)-10px 0,
+    linear-gradient(45deg, transparent 75%, var(--hotpink) 0)-10px 0,
+    linear-gradient(135deg, lightblue 50%, transparent 0) 0 0,
+    linear-gradient(45deg, blue 50%, var(--violet) 0) 0 0 var(--violet);
+  background-size: 20px 20px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  transition: 0.3s;
+  cursor: pointer;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.tarjeta.nivel2 {
+  background-color: hsl(34, 53%, 82%);
+  background-image: repeating-linear-gradient(
+      45deg,
+      transparent 5px,
+      hsla(197, 62%, 11%, 0.5) 5px,
+      hsla(197, 62%, 11%, 0.5) 10px,
+      hsla(5, 53%, 63%, 0) 10px,
+      hsla(5, 53%, 63%, 0) 35px,
+      hsla(5, 53%, 63%, 0.5) 35px,
+      hsla(5, 53%, 63%, 0.5) 40px,
+      hsla(197, 62%, 11%, 0.5) 40px,
+      hsla(197, 62%, 11%, 0.5) 50px,
+      hsla(197, 62%, 11%, 0) 50px,
+      hsla(197, 62%, 11%, 0) 60px,
+      hsla(5, 53%, 63%, 0.5) 60px,
+      hsla(5, 53%, 63%, 0.5) 70px,
+      hsla(35, 91%, 65%, 0.5) 70px,
+      hsla(35, 91%, 65%, 0.5) 80px,
+      hsla(35, 91%, 65%, 0) 80px,
+      hsla(35, 91%, 65%, 0) 90px,
+      hsla(5, 53%, 63%, 0.5) 90px,
+      hsla(5, 53%, 63%, 0.5) 110px,
+      hsla(5, 53%, 63%, 0) 110px,
+      hsla(5, 53%, 63%, 0) 120px,
+      hsla(197, 62%, 11%, 0.5) 120px,
+      hsla(197, 62%, 11%, 0.5) 140px
+    ),
+    repeating-linear-gradient(
+      135deg,
+      transparent 5px,
+      hsla(197, 62%, 11%, 0.5) 5px,
+      hsla(197, 62%, 11%, 0.5) 10px,
+      hsla(5, 53%, 63%, 0) 10px,
+      hsla(5, 53%, 63%, 0) 35px,
+      hsla(5, 53%, 63%, 0.5) 35px,
+      hsla(5, 53%, 63%, 0.5) 40px,
+      hsla(197, 62%, 11%, 0.5) 40px,
+      hsla(197, 62%, 11%, 0.5) 50px,
+      hsla(197, 62%, 11%, 0) 50px,
+      hsla(197, 62%, 11%, 0) 60px,
+      hsla(5, 53%, 63%, 0.5) 60px,
+      hsla(5, 53%, 63%, 0.5) 70px,
+      hsla(35, 91%, 65%, 0.5) 70px,
+      hsla(35, 91%, 65%, 0.5) 80px,
+      hsla(35, 91%, 65%, 0) 80px,
+      hsla(35, 91%, 65%, 0) 90px,
+      hsla(5, 53%, 63%, 0.5) 90px,
+      hsla(5, 53%, 63%, 0.5) 110px,
+      hsla(5, 53%, 63%, 0) 110px,
+      hsla(5, 53%, 63%, 0) 140px,
+      hsla(197, 62%, 11%, 0.5) 140px,
+      hsla(197, 62%, 11%, 0.5) 160px
+    );
+}
+
+.tarjeta.nivel3 {
+  background: radial-gradient(
+      circle closest-side at 60% 43%,
+      #b03 26%,
+      rgba(187, 0, 51, 0) 27%
+    ),
+    radial-gradient(
+      circle closest-side at 40% 43%,
+      #b03 26%,
+      rgba(187, 0, 51, 0) 27%
+    ),
+    radial-gradient(
+      circle closest-side at 40% 22%,
+      #d35 45%,
+      rgba(221, 51, 85, 0) 46%
+    ),
+    radial-gradient(
+      circle closest-side at 60% 22%,
+      #d35 45%,
+      rgba(221, 51, 85, 0) 46%
+    ),
+    radial-gradient(
+      circle closest-side at 50% 35%,
+      #d35 30%,
+      rgba(221, 51, 85, 0) 31%
+    ),
+    radial-gradient(
+        circle closest-side at 60% 43%,
+        #b03 26%,
+        rgba(187, 0, 51, 0) 27%
+      )
+      50px 50px,
+    radial-gradient(
+        circle closest-side at 40% 43%,
+        #b03 26%,
+        rgba(187, 0, 51, 0) 27%
+      )
+      50px 50px,
+    radial-gradient(
+        circle closest-side at 40% 22%,
+        #d35 45%,
+        rgba(221, 51, 85, 0) 46%
+      )
+      50px 50px,
+    radial-gradient(
+        circle closest-side at 60% 22%,
+        #d35 45%,
+        rgba(221, 51, 85, 0) 46%
+      )
+      50px 50px,
+    radial-gradient(
+        circle closest-side at 50% 35%,
+        #d35 30%,
+        rgba(221, 51, 85, 0) 31%
+      )
+      50px 50px;
+  background-color: #b03;
+  background-size: 30px 30px;
+}
+
+.tarjeta.nivel4 {
+  background: linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, #151515 5px, transparent 5px) 10px 0px,
+    linear-gradient(27deg, #222 5px, transparent 5px) 0px 10px,
+    linear-gradient(207deg, #222 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(
+      #1d1d1d 25%,
+      #1a1a1a 25%,
+      #1a1a1a 50%,
+      transparent 50%,
+      transparent 75%,
+      #242424 75%,
+      #242424
+    );
+  background-color: #131313;
+  background-size: 20px 20px;
+}
+
+.tarjeta.nivel5 {
+  background: radial-gradient(black 3px, transparent 4px),
+    radial-gradient(black 3px, transparent 4px),
+    linear-gradient(#fff 4px, transparent 0),
+    linear-gradient(
+      45deg,
+      transparent 74px,
+      transparent 75px,
+      #a4a4a4 75px,
+      #a4a4a4 76px,
+      transparent 77px,
+      transparent 109px
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 75px,
+      transparent 76px,
+      #a4a4a4 76px,
+      #a4a4a4 77px,
+      transparent 78px,
+      transparent 109px
+    ),
+    #fff;
+  background-position-x: 0%, 0%, 0%, 0%, 0%, 0%;
+  background-position-y: 0%, 0%, 0%, 0%, 0%, 0%;
+  background-size: auto, auto, auto, auto, auto, auto;
+  background-size: 100px 100px, 100px 100px, 100% 6px, 100px 100px, 100px 100px;
+  background-position: 60px 55px, 0px -9px, 0px 0px, 0px 0px, 0px 0px;
+}
+
+.tarjeta__contenido {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: rotateY(-180deg) translateZ(1px);
+  backface-visibility: hidden;
+  background-color: var(--white);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 0.1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  padding-top: 0.4rem;
+}
+
+.tarjeta__contenido::selection {
+  background: transparent;
+}
+
+.tarjeta.descubierta {
+  transform: rotateY(-180deg);
+}
+
+/*@keyframes error {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  10% {
+    transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  90% {
+    transform: rotate(2deg);
+  }
+}*/
+
+@keyframes acierto {
+  from {
+    transform: rotateY(-180deg) scale3d(1, 1, 1);
+    opacity: 1;
+  }
+
+  25% {
+    transform: rotateY(-180deg) scale3d(1.1, 1.1, 1.1);
+    opacity: 1;
+  }
+
+  to {
+    transform: rotateY(-180deg) scale3d(1, 1, 1);
+    opacity: 0;
+  }
+}
+
+.acertada {
+  pointer-events: none;
+}
+
+.acertada .tarjeta__contenido {
+  animation: acierto 1.3s ease-in-out forwards;
+}
+
+.error {
+  animation: error 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+
+#subir {
+  display: none;
+}
+
+/*BOTONES PARA PASAR EL NIVEL*/
+#next2.visible,
+#next4.visible,
+#next8.visible,
+#next12.visible,
+#next19.visible,
+#creditosrelax.visible,
+#next1relax.visible {
+  display: block;
+}
+
+#next2,
+#next4,
+#next8,
+#next12,
+#next19,
+#next1relax,
+#creditosrelax {
+  display: none;
+}
+
+.sube-nivel,
+.game-overg,
+.game-overt,
+.end-game {
+  display: none;
+  position: absolute;
+  top: -340px;
+  bottom: 0;
+  height: 480px;
+}
+
+.end-game {
+  height: 550px;
+}
+
+.sube-nivel.relax2,
+.game-overg.relax2,
+.game-overt.relax2,
+.end-game.relax2 {
+  height: 530px;
+  top: -80px;
+}
+
+.sube-nivel.visible,
+.game-overg.visible,
+.game-overt.visible,
+.end-game.visible,
+button.next1.visible,
+button.back1.visible,
+button.next3.visible,
+button.next5.visible,
+button.next9.visible,
+button.next10.visible,
+button.next11.visible,
+button.next13.visible,
+button.next14.visible,
+button.next15.visible,
+button.next16.visible,
+button.next17.visible,
+button.next18.visible,
+.credits.visible,
+.replay.visible,
+.replayrelax.visible,
+button.next6.visible,
+button.next7.visible,
+button.personaje1.visible,
+button.personaje2.visible,
+.personajeperro.visible,
+.personajegato.visible,
+.personajeperrob.visible,
+.personajegatob.visible,
+.personajeperrobr.visible,
+.personajegatobr.visible,
+.monstruo1.visible,
+.monstruo1r.visible,
+.leveling.visible,
+.levelup.visible,
+.mensajesemifinal.visible {
+  display: flex;
+}
+
+.heroes.visible {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.heroes.visible2 {
+  justify-content: space-around;
+  align-items: center;
+}
+
+.caracteristicasgato.visible,
+.caracteristicasperro.visible,
+.caracteristicasmonstruo1.visible,
+.caracteristicasmonstruo2.visible,
+.caracteristicasmonstruo3.visible,
+.caracteristicasmonstruo4.visible,
+.caracteristicasmonstruo5.visible {
+  display: flex;
+  flex-direction: column;
+  color: var(--white);
+  font-family: var(--retro);
+  font-size: 17px;
+  margin-left: 30px;
+}
+
+.caracteristicasgato.animaciontext,
+.caracteristicasperro.animaciontext,
+.caracteristicasmonstruo1.animaciontext,
+.caracteristicasmonstruo2.animaciontext,
+.caracteristicasmonstruo3.animaciontext,
+.caracteristicasmonstruo4.animaciontext,
+.caracteristicasmonstruo5.animaciontext {
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) 1s both;
+}
+
+@keyframes text-focus-in {
+  0% {
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.modal {
+  background: var(--white);
+  padding: 3rem 3rem 1rem;
+  margin: -80px auto 20px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25), 4px 4px 10px rgba(0, 0, 0, 0.2);
+  color: var(--black);
+}
+
+.modal h2 {
+  font-family: var(--retro);
+  margin: 0;
+  font-size: 42px;
+}
+
+.modal p {
+  font-size: 1.5rem;
+  font-family: var(--retro);
+  color: var(--black);
+}
+
+.modal button {
+  margin: 3rem 0;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  background-color: rgba(5, 5, 5, 0.7);
+  padding: 0.75rem 4rem;
+  color: var(--white);
+  font-family: var(--retro);
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1;
+  transition: 0.3s;
+}
+
+button.next1 {
+  justify-self: center;
+  align-self: flex-end;
+  font-size: 14px;
+  display: none;
+  margin-right: 15px;
+}
+
+button.next3,
+button.next5,
+button.next6,
+button.next7,
+button.next9,
+button.next11,
+button.next13,
+button.next14,
+button.next15,
+button.next17 {
+  justify-self: center;
+  align-self: center;
+  width: 18%;
+  font-size: 14px;
+  display: none;
+}
+
+.credits,
+.replay,
+.replayrelax {
+  justify-self: center;
+  align-self: center;
+  font-size: 14px;
+  display: none;
+}
+
+button.next10 {
+  justify-self: center;
+  align-self: center;
+  font-size: 14px;
+  display: none;
+}
+
+button.next18 {
+  justify-self: center;
+  align-self: center;
+  font-size: 14px;
+  display: none;
+}
+
+button.next15 {
+  margin-top: -45px;
+}
+
+button.next15,
+button.next18,
+button.next20 {
+  animation: delay 2s 4s both;
+}
+
+button.next16 {
+  justify-self: center;
+  align-self: center;
+  font-size: 14px;
+  display: none;
+  margin-top: -555px;
+  animation: delay 2s 16s both;
+}
+
+button.next17 {
+  margin-top: 5px;
+}
+
+button.back1 {
+  justify-self: center;
+  align-self: flex-start;
+  font-size: 14px;
+  display: none;
+  margin-left: 15px;
+}
+
+.monstruogfinal.delay2,
+.monstruopfinal.delay2 {
+  animation: delay2 8s both;
+}
+
+@keyframes delay2 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.7;
+  }
+
+  40% {
+    opacity: 0.3;
+  }
+
+  60% {
+    opacity: 0.8;
+  }
+
+  80% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.back1,
+.next1,
+.next3,
+.subir2,
+.next5,
+.next6,
+.subir3,
+.next9,
+.next10,
+.next17 {
+  animation: escribir 2s 3s both;
+}
+
+.stggatocaido.delay3,
+.stgperrocaido.delay3 {
+  animation: delay3 8s both;
+}
+
+@keyframes delay3 {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0.3;
+  }
+
+  40% {
+    opacity: 0.7;
+  }
+
+  60% {
+    opacity: 0.4;
+  }
+
+  80% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 0.2;
+  }
+}
+
+button.next14 {
+  animation: delay 2s 15s both;
+}
+
+.mensajesemifinal {
+  display: none;
+  margin: -400px auto 20px auto;
+  text-align: center;
+  font-family: var(--retro);
+  color: var(--white);
+  animation: delay 2s 12s both;
+}
+
+@keyframes delay {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.botonera {
+  display: none;
+  justify-content: space-around;
+  margin-top: 35px;
+}
+
+.heroes,
+.caracteristicasgato,
+.caracteristicasperro,
+.caracteristicasmonstruo1,
+.caracteristicasmonstruo2,
+.caracteristicasmonstruo3,
+.caracteristicasmonstruo4,
+.caracteristicasmonstruo5 {
+  display: none;
+}
+
+.avatar {
+  display: none;
+  color: var(--white);
+  font-family: var(--retro);
+  margin: 20px auto 50px auto;
+}
+
+button.personaje1,
+button.personaje2 {
+  display: none;
+  width: 290px;
+  height: 290px;
+  justify-content: center;
+  align-items: center;
+}
+
+.personaje1.animacionavatar1,
+.personaje2.animacionavatar1 {
+  animation: slide-in-elliptic-left-fwd 0.7s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-in-elliptic-left-fwd {
+  0% {
+    transform: translateX(-800px) translateY(0px) rotateY(30deg) scale(0);
+    transform-origin: -100% 50%;
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) translateY(120px) rotateY(0) scale(1);
+    transform-origin: 1800px 50%;
+    opacity: 1;
+  }
+}
+
+.personaje1.animacionizquierda,
+.personaje2.animacionizquierda,
+.personajegatob.animacionizquierda,
+.personajeperrob.animacionizquierda,
+.stg2gato.animacionizquierda,
+.stg3gato.animacionizquierda,
+.stg4gato.animacionizquierda,
+.stg2perro.animacionizquierda,
+.stg3perro.animacionizquierda,
+.stg4perro.animacionizquierda,
+.lvlgatofinalb.animacionizquierda,
+.lvlperrofinalb.animacionizquierda {
+  animation: roll-in-blurred-left 1s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes roll-in-blurred-left {
+  0% {
+    transform: translateX(-1000px) translateY(0px) rotate(-720deg);
+    filter: blur(60px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-120px) translateY(0px) rotate(0deg);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.personajegatob.animaciongolpe,
+.personajeperrob.animaciongolpe,
+.personajegatobr.animaciongolpe,
+.personajeperrobr.animaciongolpe,
+.stg2gato.animaciongolpe,
+.stg2gator.animaciongolpe,
+.stg3gato.animaciongolpe,
+.stg3gator.animaciongolpe,
+.stg4gato.animaciongolpe,
+.stg4gator.animaciongolpe,
+.stg2perro.animaciongolpe,
+.stg2perror.animaciongolpe,
+.stg3perro.animaciongolpe,
+.stg3perror.animaciongolpe,
+.stg4perro.animaciongolpe,
+.stg4perror.animaciongolpe,
+.lvlgatofinalb.animaciongolpe,
+.lvlperrofinalb.animaciongolpe,
+.lvlgatofinalbr.animaciongolpe,
+.lvlperrofinalbr.animaciongolpe {
+  animation: jello-horizontal 0.9s both;
+}
+
+@keyframes jello-horizontal {
+  0% {
+    transform: scale3d(1, 1, 1) translateX(-120px);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1) translateX(-115px);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1) translateX(-115px);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1) translateX(-115px);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1) translateX(-115px);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1) translateX(-115px);
+  }
+  100% {
+    transform: scale3d(1, 1, 1) translateX(-120px);
+  }
+}
+
+.personajegatob.animaciongolpe1,
+.personajeperrob.animaciongolpe1,
+.personajegatobr.animaciongolpe1,
+.personajeperrobr.animaciongolpe1,
+.stg2gato.animaciongolpe1,
+.stg2gator.animaciongolpe1,
+.stg3gato.animaciongolpe1,
+.stg3gator.animaciongolpe1,
+.stg4gato.animaciongolpe1,
+.stg4gator.animaciongolpe1,
+.stg2perro.animaciongolpe1,
+.stg2perror.animaciongolpe1,
+.stg3perro.animaciongolpe1,
+.stg3perror.animaciongolpe1,
+.stg4perro.animaciongolpe1,
+.stg4perror.animaciongolpe1,
+.lvlgatofinalb.animaciongolpe1,
+.lvlperrofinalb.animaciongolpe1,
+.lvlgatofinalbr.animaciongolpe1,
+.lvlperrofinalbr.animaciongolpe1 {
+  animation: jello-vertical 0.9s both;
+}
+
+@keyframes jello-vertical {
+  0% {
+    transform: scale3d(1, 1, 1) translateX(-120px);
+  }
+  30% {
+    transform: scale3d(0.75, 1.25, 1) translateX(-115px);
+  }
+  40% {
+    transform: scale3d(1.25, 0.75, 1) translateX(-115px);
+  }
+  50% {
+    transform: scale3d(0.85, 1.15, 1) translateX(-115px);
+  }
+  65% {
+    transform: scale3d(1.05, 0.95, 1) translateX(-115px);
+  }
+  75% {
+    transform: scale3d(0.95, 1.05, 1) translateX(-115px);
+  }
+  100% {
+    transform: scale3d(1, 1, 1) translateX(-120px);
+  }
+}
+
+.monstruo1.animacionderecha,
+.monstruo2.animacionderecha,
+.monstruo3.animacionderecha,
+.monstruo4g.animacionderecha,
+.monstruo4p.animacionderecha,
+.monstruogfinal.animacionderecha,
+.monstruopfinal.animacionderecha,
+.monstruogfinalb.animacionderecha,
+.monstruopfinalb.animacionderecha {
+  animation: roll-in-blurred-right 1s 0.5s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes roll-in-blurred-right {
+  0% {
+    transform: translateX(1000px) translateY(0px) rotate(720deg);
+    filter: blur(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(120px) translateY(0) rotate(0deg);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.monstruo1.animaciongolpe3,
+.monstruo1r.animaciongolpe3,
+.monstruo2.animaciongolpe3,
+.monstruo2r.animaciongolpe3,
+.monstruo3.animaciongolpe3,
+.monstruo3r.animaciongolpe3,
+.monstruo4g.animaciongolpe3,
+.monstruo4gr.animaciongolpe3,
+.monstruo4p.animaciongolpe3,
+.monstruo4pr.animaciongolpe3,
+.monstruogfinal.animaciongolpe3,
+.monstruopfinal.animaciongolpe3,
+.monstruogfinalr.animaciongolpe3,
+.monstruopfinalr.animaciongolpe3,
+.monstruoformafinalg.animaciongolpe3,
+.monstruoformafinalp.animaciongolpe3,
+.monstruoformafinalgr.animaciongolpe3,
+.monstruoformafinalpr.animaciongolpe3 {
+  animation: jello-horizontal1 0.9s both;
+}
+
+@keyframes jello-horizontal1 {
+  0% {
+    transform: scale3d(1, 1, 1) translateX(120px);
+  }
+  30% {
+    transform: scale3d(1.25, 0.75, 1) translateX(115px);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1) translateX(115px);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1) translateX(115px);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1) translateX(115px);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1) translateX(115px);
+  }
+  100% {
+    transform: scale3d(1, 1, 1) translateX(120px);
+  }
+}
+
+.monstruo1.animaciongolpe4,
+.monstruo1r.animaciongolpe4,
+.monstruo2.animaciongolpe4,
+.monstruo2r.animaciongolpe4,
+.monstruo3.animaciongolpe4,
+.monstruo3r.animaciongolpe4,
+.monstruo4g.animaciongolpe4,
+.monstruo4gr.animaciongolpe4,
+.monstruo4p.animaciongolpe4,
+.monstruo4pr.animaciongolpe4,
+.monstruogfinal.animaciongolpe4,
+.monstruopfinal.animaciongolpe4,
+.monstruogfinalr.animaciongolpe4,
+.monstruopfinalr.animaciongolpe4,
+.monstruoformafinalg.animaciongolpe4,
+.monstruoformafinalp.animaciongolpe4,
+.monstruoformafinalgr.animaciongolpe4,
+.monstruoformafinalpr.animaciongolpe4 {
+  animation: jello-vertical1 0.9s both;
+}
+
+@keyframes jello-vertical1 {
+  0% {
+    transform: scale3d(1, 1, 1) translateX(120px);
+  }
+  30% {
+    transform: scale3d(0.75, 1.25, 1) translateX(115px);
+  }
+  40% {
+    transform: scale3d(1.25, 0.75, 1) translateX(115px);
+  }
+  50% {
+    transform: scale3d(0.85, 1.15, 1) translateX(115px);
+  }
+  65% {
+    transform: scale3d(1.05, 0.95, 1) translateX(115px);
+  }
+  75% {
+    transform: scale3d(0.95, 1.05, 1) translateX(115px);
+  }
+  100% {
+    transform: scale3d(1, 1, 1) translateX(120px);
+  }
+}
+
+.personaje1.acomodar,
+.personaje2.acomodar,
+.personajegato.acomodar,
+.personajeperro.acomodar {
+  justify-self: flex-start;
+  margin-right: 120px;
+}
+
+.monstruo1.acomodar {
+  justify-self: flex-end;
+}
+
+button:hover,
+button:focus {
+  border: 1px solid var(--white);
+  box-shadow: 0 0 6px var(--white);
+  outline: none;
+}
+
+button.personaje1:hover,
+button.personaje1:focus {
+  border: 3px solid var(--blue);
+  box-shadow: 0 0 6px var(--blue);
+  outline: none;
+}
+
+button.personaje2:hover,
+button.personaje2:focus {
+  border: 3px solid var(--red);
+  box-shadow: 0 0 6px var(--red);
+  outline: none;
+}
+
+button.personaje2.remover:hover,
+button.personaje2.remover:focus {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  cursor: auto;
+}
+
+button.personaje1.remover:hover,
+button.personaje1.remover:focus {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  cursor: auto;
+}
+
+.modal .reiniciar {
+  color: var(--red);
+  background: transparent;
+  border: 0;
+  text-transform: capitalize;
+  font-family: var(--retro);
+  font-size: 1rem;
+  margin-top: 0px;
+}
+
+.sonido {
+  display: none;
+}
+
+.cronometro-oculto {
+  display: none;
+}
+
+.control-nivel {
+  position: absolute;
+  font-size: 0.8rem;
+  top: 2.9rem;
+  right: 0.5rem;
+  padding: 0;
+  width: 1.1rem;
+  height: 1.1rem;
+  line-height: 0.68rem;
+  display: flex;
+  justify-content: center;
+  background: var(--hotpink);
+}
+
+.control-oculto {
+  display: none;
+}
+
+.selecciona-nivel {
+  background-color: var(--hotpink);
+  position: fixed;
+  width: 250px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateX(250px);
+  transition: transform 0.3s;
+  padding: 1rem 2rem;
+}
+
+.selecciona-nivel.visible {
+  transform: translateX(0);
+}
+
+.selecciona-nivel button {
+  background: transparent;
+  padding: 0;
+}
+
+.selecciona-nivel ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.selecciona-nivel li {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.cierra-niveles {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 2rem;
+  font-family: sans-serif;
+  font-weight: 300;
+}
+
+/*-----------------------------------------------------Media Queries------------ Smartphone L-----------------------------*/
+@media screen and (max-width: 425px) {
+  .bienvenida h1 {
+    font-size: 48px;
+  }
+
+  .bienvenida button {
+    padding: 0.5rem 0.5rem;
+    margin: 30px;
+  }
+
+  .juego-story,
+  .juego-relax {
+    font-size: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    line-height: 1.2;
+  }
+
+  button.settings {
+    font-size: 18px;
+  }
+
+  .coded {
+    font-size: 18px;
+    padding-top: 80px;
+  }
+
+  .informacionJuego h3,
+  .modal h2 {
+    font-size: 20px;
+  }
+
+  .howTo {
+    width: 320px;
+    height: 160px;
+  }
+
+  .explicacion {
+    font-size: 16px;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .botonera.visible {
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .back3,
+  #next1relax,
+  .reiniciar,
+  .creditosrelax,
+  .replayrelax,
+  .boton,
+  button.opcion-a,
+  button.opcion-b,
+  button.opcion-c,
+  button.opcion-pelear,
+  button.opcion-dormir,
+  .opcion-pelear2,
+  .subir2,
+  .subir3,
+  .subir4,
+  .subir5,
+  #next6,
+  #next7 {
+    width: 80%;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .opcion-pelear2 {
+    margin-right: 0px;
+  }
+
+  #next3,
+  #next5,
+  #next9,
+  #next13 {
+    width: 65%;
+    font-size: 14px;
+    line-height: 1.2;
+    margin-top: 40px;
+  }
+
+  #next2.visible,
+  #next4.visible,
+  #next8.visible,
+  #next12.visible,
+  #next19.visible {
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
+  .opcion-decision.visible {
+    font-size: 14px;
+    margin: 50px auto 0 auto;
+    width: 80%;
+  }
+
+  .boton {
+    width: 90%;
+    margin-top: 10px;
+  }
+
+  button.back1,
+  button.next1,
+  button.next10,
+  button.next11,
+  button.next15,
+  button.next17 {
+    width: 80%;
+    font-size: 14px;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 1.2;
+  }
+
+  button.next16 {
+    width: 80%;
+    font-size: 14px;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 1.2;
+    margin-top: 15px;
+  }
+
+  .cabecera {
+    padding: 10px 10px 10px 5px;
+  }
+
+  .leveling {
+    font-size: 20px;
+  }
+
+  .info1 h3,
+  .info2 h3,
+  .info3 h3,
+  .info4 h3 {
+    font-size: 14px;
+    margin-top: 30px;
+  }
+
+  .info1 p,
+  .info2 p,
+  .info3 p,
+  .info4 p {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+
+  .arrow,
+  .arrow2,
+  .arrow3,
+  .lvlgato1,
+  .lvlperro1,
+  .lvlgato2,
+  .lvlperro2,
+  .lvlgato3,
+  .lvlperro3,
+  .lvlgato4,
+  .lvlperro4 {
+    width: 120px;
+    height: 120px;
+    margin-top: 30px;
+  }
+
+  .arrow4 {
+    width: 80px;
+    height: 80px;
+    margin-top: 30px;
+  }
+
+  .titulorelax,
+  .titulorrelax,
+  .mensaje-creditos p,
+  .mensaje1,
+  .miweb {
+    font-size: 16px;
+  }
+
+  .cabecera-num,
+  #situacion,
+  .nivel {
+    font-size: 12px;
+  }
+
+  .cabecera-titulo {
+    font-size: 10px;
+  }
+
+  #mensaje-datos,
+  #mensaje-datos2,
+  #mensaje-datos3,
+  #mensaje-datos4,
+  #mensaje-datos5,
+  #mensaje-datos6,
+  #mensaje-datos7,
+  #mensaje-datos8,
+  #mensaje-datos9,
+  #mensaje-datos11,
+  .datos p {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  #mensaje-datosfinal {
+    font-size: 16px;
+    padding: 30px;
+  }
+
+  .formulario {
+    width: 95%;
+  }
+
+  label {
+    width: 100%;
+  }
+
+  .nombre::placeholder,
+  .fecha::placeholder {
+    font-size: 9.5px;
+  }
+
+  input {
+    width: 100%;
+    margin: 10px;
+  }
+
+  .numeros {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .mesa {
+    width: 90%;
+  }
+
+  .tarjeta {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .tarjeta__contenido {
+    font-size: 2rem;
+  }
+
+  .medal {
+    height: 250px;
+    width: 250px;
+    margin-top: -100px;
+  }
+
+  .exito {
+    height: 200px;
+    width: 200px;
+    margin-top: 1px;
+  }
+
+  .modal {
+    margin: 50px auto 20px auto;
+  }
+
+  .dormir img,
+  .dormir2 img,
+  .dormir3 img,
+  .dormir4 img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .sube-nivel,
+  .game-overg,
+  .game-overt,
+  .end-game {
+    height: 600px;
+    top: -315px;
+  }
+
+  .sube-nivel.relax2,
+  .game-overg.relax2,
+  .game-overt.relax2,
+  .end-game.relax2 {
+    height: 630px;
+  }
+
+  .clauhaus {
+    width: 170px;
+    height: 170px;
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+
+  .gatocierre,
+  .perrocierre {
+    width: 120px;
+    height: 120px;
+    margin-top: 30px;
+  }
+
+  button.personaje1,
+  button.personaje2 {
+    width: 170px;
+    height: 170px;
+  }
+
+  .opcion-pelear3 {
+    top: 200px;
+    right: 40px;
+    font-size: 10px;
+  }
+
+  .opcion-pelear4 {
+    top: 100px;
+    left: 39px;
+    font-size: 10px;
+  }
+
+  .opcion-pelear5 {
+    top: 30px;
+    left: 10px;
+    font-size: 10px;
+  }
+
+  .opcion-pelear6 {
+    top: 150px;
+    font-size: 10px;
+  }
+
+  .opcion-pelear7mob {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .opcion-pelear8 {
+    top: 170px;
+    font-size: 18px;
+  }
+
+  .personajegato,
+  .personajeperro,
+  .personajegatob,
+  .personajeperrob,
+  .personajegatobr,
+  .personajeperrobr,
+  .stg2gato,
+  .stg2gator,
+  .stg2perro,
+  .stg2perror,
+  .stg3gato,
+  .stg3gator,
+  .stg3perro,
+  .stg3perror,
+  .stg4gato,
+  .stg4gator,
+  .stg4perro,
+  .stg4perror {
+    width: 160px;
+    height: 160px;
+  }
+
+  .personajegatob.animacionizquierda,
+  .personajeperrob.animacionizquierda,
+  .stg2gato.animacionizquierda,
+  .stg2perro.animacionizquierda,
+  .stg3gato.animacionizquierda,
+  .stg3perro.animacionizquierda,
+  .stg4gato.animacionizquierda,
+  .stg4perro.animacionizquierda,
+  .lvlgatofinalb.animacionizquierda,
+  .lvlperrofinalb.animacionizquierda {
+    animation: showingUp 2s 1s both;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+  }
+
+  .monstruo1.animacionderecha,
+  .monstruo2.animacionderecha,
+  .monstruo3.animacionderecha,
+  .monstruo4g.animacionderecha,
+  .monstruo4p.animacionderecha,
+  .monstruogfinalb.animacionderecha,
+  .monstruopfinalb.animacionderecha {
+    animation: showingUp 2s 1s both;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+  }
+
+  .monstruogfinal.animacionderecha,
+  .monstruopfinal.animacionderecha {
+    animation: showingUp 2s 1s both;
+  }
+
+  .monstruo1,
+  .monstruo1r,
+  .monstruo2,
+  .monstruo2r {
+    width: 200px;
+    height: 200px;
+  }
+
+  .monstruo3,
+  .monstruo3r,
+  .monstruo4g,
+  .monstruo4gr,
+  .monstruo4p,
+  .monstruo4pr {
+    width: 170px;
+    height: 170px;
+  }
+
+  .monstruogfinal,
+  .monstruopfinal,
+  .monstruogfinalr,
+  .monstruopfinalr,
+  .monstruogfinalb,
+  .monstruopfinalb {
+    width: 180px;
+    height: 180px;
+    margin-right: 2px;
+  }
+
+  .monstruoformafinalg,
+  .monstruoformafinalp {
+    width: 400px;
+    height: 250px;
+    margin-right: 120px;
+  }
+
+  .monstruoformafinalgr,
+  .monstruoformafinalpr {
+    width: 400px;
+    height: 250px;
+    margin-right: 220px;
+  }
+
+  .caracteristicasgato h2,
+  .caracteristicasperro h2 {
+    font-size: 20px;
+  }
+
+  .caracteristicasgato h3,
+  .caracteristicasperro h3 {
+    font-size: 16px;
+  }
+
+  .caracteristicasgato p,
+  .caracteristicasperro p {
+    font-size: 14px;
+  }
+
+  .personaje1.animacionavatar1,
+  .personaje2.animacionavatar1 {
+    animation: showingUp 2s 2s both;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+  }
+
+  .monstruo1.animacion3,
+  .monstruo2b.animacion3,
+  .monstruo3b.animacion3,
+  .monstruo4gb.animacion3,
+  .monstruo4pb.animacion3,
+  .monstruogfinalb.animacion3,
+  .monstruopfinalb.animacion3 {
+    animation: showingUp 2s 2s both;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+  }
+
+  .monstruo2b,
+  .monstruo3b {
+    width: 200px;
+    height: 200px;
+  }
+
+  @keyframes showingUp {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .avatar {
+    margin: 10px auto 50px auto;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .opciones1 {
+    margin: 10px;
+  }
+
+  .heroes.cambioFlex,
+  .opciones1.cambioFlex,
+  .opciones2.cambioFlex,
+  .opciones3.cambioFlex,
+  .opciones4.cambioFlex,
+  .opciones5.cambioFlex,
+  .opciones6.cambioFlex {
+    flex-direction: column;
+  }
+
+  .personajegatob.animaciongolpe,
+  .personajeperrob.animaciongolpe,
+  .personajegatobr.animaciongolpe,
+  .personajeperrobr.animaciongolpe,
+  .stg2gato.animaciongolpe,
+  .stg2gator.animaciongolpe,
+  .stg3gato.animaciongolpe,
+  .stg3gator.animaciongolpe,
+  .stg4gato.animaciongolpe,
+  .stg4gator.animaciongolpe,
+  .stg2perro.animaciongolpe,
+  .stg2perror.animaciongolpe,
+  .stg3perro.animaciongolpe,
+  .stg3perror.animaciongolpe,
+  .stg4perro.animaciongolpe,
+  .stg4perror.animaciongolpe,
+  .lvlgatofinalb.animaciongolpe,
+  .lvlperrofinalb.animaciongolpe,
+  .lvlgatofinalbr.animaciongolpe,
+  .lvlperrofinalbr.animaciongolpe {
+    animation: jello-horizontal 0.9s both;
+  }
+
+  @keyframes jello-horizontal {
+    0% {
+      transform: scale3d(1, 1, 1) translateX(-12px);
+    }
+    30% {
+      transform: scale3d(1.25, 0.75, 1) translateX(-10px);
+    }
+    40% {
+      transform: scale3d(0.75, 1.25, 1) translateX(-10px);
+    }
+    50% {
+      transform: scale3d(1.15, 0.85, 1) translateX(-10px);
+    }
+    65% {
+      transform: scale3d(0.95, 1.05, 1) translateX(-10px);
+    }
+    75% {
+      transform: scale3d(1.05, 0.95, 1) translateX(-10px);
+    }
+    100% {
+      transform: scale3d(1, 1, 1) translateX(-12px);
+    }
+  }
+
+  .personajegatob.animaciongolpe1,
+  .personajeperrob.animaciongolpe1,
+  .personajegatobr.animaciongolpe1,
+  .personajeperrobr.animaciongolpe1,
+  .stg2gato.animaciongolpe1,
+  .stg2gator.animaciongolpe1,
+  .stg3gato.animaciongolpe1,
+  .stg3gator.animaciongolpe1,
+  .stg4gato.animaciongolpe1,
+  .stg4gator.animaciongolpe1,
+  .stg2perro.animaciongolpe1,
+  .stg2perror.animaciongolpe1,
+  .stg3perro.animaciongolpe1,
+  .stg3perror.animaciongolpe1,
+  .stg4perro.animaciongolpe1,
+  .stg4perror.animaciongolpe1,
+  .lvlgatofinalb.animaciongolpe1,
+  .lvlperrofinalb.animaciongolpe1,
+  .lvlgatofinalbr.animaciongolpe1,
+  .lvlperrofinalbr.animaciongolpe1 {
+    animation: jello-vertical 0.9s both;
+  }
+
+  @keyframes jello-vertical {
+    0% {
+      transform: scale3d(1, 1, 1) translateX(-12px);
+    }
+    30% {
+      transform: scale3d(0.75, 1.25, 1) translateX(-10px);
+    }
+    40% {
+      transform: scale3d(1.25, 0.75, 1) translateX(-10px);
+    }
+    50% {
+      transform: scale3d(0.85, 1.15, 1) translateX(-10px);
+    }
+    65% {
+      transform: scale3d(1.05, 0.95, 1) translateX(-10px);
+    }
+    75% {
+      transform: scale3d(0.95, 1.05, 1) translateX(-10px);
+    }
+    100% {
+      transform: scale3d(1, 1, 1) translateX(-12px);
+    }
+  }
+
+  .monstruo1.animaciongolpe3,
+  .monstruo1r.animaciongolpe3,
+  .monstruo2.animaciongolpe3,
+  .monstruo2r.animaciongolpe3,
+  .monstruo3.animaciongolpe3,
+  .monstruo3r.animaciongolpe3,
+  .monstruo4g.animaciongolpe3,
+  .monstruo4gr.animaciongolpe3,
+  .monstruo4p.animaciongolpe3,
+  .monstruo4pr.animaciongolpe3,
+  .monstruogfinal.animaciongolpe3,
+  .monstruopfinal.animaciongolpe3,
+  .monstruogfinalr.animaciongolpe3,
+  .monstruopfinalr.animaciongolpe3,
+  .monstruoformafinalg.animaciongolpe3,
+  .monstruoformafinalp.animaciongolpe3,
+  .monstruoformafinalgr.animaciongolpe3,
+  .monstruoformafinalpr.animaciongolpe3 {
+    animation: jello-horizontal1 0.9s both;
+  }
+
+  @keyframes jello-horizontal1 {
+    0% {
+      transform: scale3d(1, 1, 1) translateX(15px);
+    }
+    30% {
+      transform: scale3d(1.25, 0.75, 1) translateX(11px);
+    }
+    40% {
+      transform: scale3d(0.75, 1.25, 1) translateX(11px);
+    }
+    50% {
+      transform: scale3d(1.15, 0.85, 1) translateX(11px);
+    }
+    65% {
+      transform: scale3d(0.95, 1.05, 1) translateX(11px);
+    }
+    75% {
+      transform: scale3d(1.05, 0.95, 1) translateX(11px);
+    }
+    100% {
+      transform: scale3d(1, 1, 1) translateX(15px);
+    }
+  }
+
+  .monstruo1.animaciongolpe4,
+  .monstruo1r.animaciongolpe4,
+  .monstruo2.animaciongolpe4,
+  .monstruo2r.animaciongolpe4,
+  .monstruo3.animaciongolpe4,
+  .monstruo3r.animaciongolpe4,
+  .monstruo4g.animaciongolpe4,
+  .monstruo4gr.animaciongolpe4,
+  .monstruo4p.animaciongolpe4,
+  .monstruo4pr.animaciongolpe4,
+  .monstruogfinal.animaciongolpe4,
+  .monstruopfinal.animaciongolpe4,
+  .monstruogfinalr.animaciongolpe4,
+  .monstruopfinalr.animaciongolpe4,
+  .monstruoformafinalg.animaciongolpe4,
+  .monstruoformafinalp.animaciongolpe4,
+  .monstruoformafinalgr.animaciongolpe4,
+  .monstruoformafinalpr.animaciongolpe4 {
+    animation: jello-vertical1 0.9s both;
+  }
+
+  @keyframes jello-vertical1 {
+    0% {
+      transform: scale3d(1, 1, 1) translateX(15px);
+    }
+    30% {
+      transform: scale3d(0.75, 1.25, 1) translateX(11px);
+    }
+    40% {
+      transform: scale3d(1.25, 0.75, 1) translateX(11px);
+    }
+    50% {
+      transform: scale3d(0.85, 1.15, 1) translateX(11px);
+    }
+    65% {
+      transform: scale3d(1.05, 0.95, 1) translateX(11px);
+    }
+    75% {
+      transform: scale3d(0.95, 1.05, 1) translateX(11px);
+    }
+    100% {
+      transform: scale3d(1, 1, 1) translateX(15px);
+    }
+  }
+
+  .monstruo3b.animacion3b {
+    animation: animacion3b 2s both;
+  }
+
+  @keyframes animacion3b {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .peligro {
+    display: none;
+    font-family: var(--retro);
+    color: var(--white);
+    font-size: 50px;
+    position: absolute;
+    top: 150px;
+    right: 20px;
+    text-align: center;
+    animation: danger 2s both;
+  }
+
+  @keyframes danger {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .stg2gato.animacionentrada,
+  .stg3gato.animacionentrada,
+  .stg4gato.animacionentrada,
+  .stg2perro.animacionentrada,
+  .stg3perro.animacionentrada,
+  .stg4perro.animacionentrada {
+    animation: bounce-in-left 1.1s both;
+  }
+
+  @keyframes bounce-in-left {
+    0% {
+      transform: translateX(-600px);
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    38% {
+      transform: translateX(15px);
+      animation-timing-function: ease-out;
+    }
+    55% {
+      transform: translateX(9px);
+      animation-timing-function: ease-in;
+    }
+    72% {
+      transform: translateX(15px);
+      animation-timing-function: ease-out;
+    }
+    81% {
+      transform: translateX(12px);
+      animation-timing-function: ease-in;
+    }
+    90% {
+      transform: translateX(15px);
+      animation-timing-function: ease-out;
+    }
+    95% {
+      transform: translateX(14px);
+      animation-timing-function: ease-in;
+    }
+    100% {
+      transform: translateX(15px);
+      animation-timing-function: ease-out;
+      opacity: 1;
+    }
+  }
+
+  .hablar1,
+  .hablar3 {
+    font-size: 10px;
+    top: 300px;
+    right: 30px;
+  }
+
+  .hablar2 {
+    font-size: 10px;
+    top: 400px;
+    left: 20px;
+  }
+
+  .hablar4mob {
+    font-size: 10px;
+    top: 200px;
+    left: 100px;
+    position: absolute;
+    color: var(--white);
+    font-family: var(--retro);
+  }
+
+  .hablar5mob {
+    font-size: 10px;
+    top: 80px;
+    position: absolute;
+    color: var(--white);
+    font-family: var(--retro);
+  }
+
+  .trash {
+    margin-top: 40px;
+    margin-left: 100px;
+  }
+
+  .phone {
+    top: 130px;
+    right: 60px;
+    animation: celular 10s 2s 2 both;
+  }
+
+  @keyframes celular {
+    0% {
+      transform: translateY(25px) translateX(50px);
+    }
+    10% {
+      transform: translateY(-60px) translateX(-120px);
+    }
+    20% {
+      transform: translateY(68px) translateX(10px);
+    }
+    30% {
+      transform: translateY(-20px) translateX(30px);
+    }
+    40% {
+      transform: translateY(150px) translateX(-120px);
+    }
+    50% {
+      transform: translateY(-100px) translateX(80px);
+    }
+    60% {
+      transform: translateY(230px) translateX(-160px);
+    }
+    70% {
+      transform: translateY(-158px) translateX(10px);
+    }
+    80% {
+      transform: translateY(210px) translateX(90px);
+    }
+    90% {
+      transform: translateY(-80px) translateX(-110px);
+    }
+    95% {
+      transform: translateY(0px) translateX(0px);
+    }
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+  }
+
+  .hablar6,
+  .hablar8 {
+    font-size: 10px;
+    top: 20px;
+    right: 40px;
+  }
+
+  .hablar7,
+  .hablar9 {
+    font-size: 10px;
+    top: 20px;
+    left: 40px;
+  }
+
+  .hablar10 {
+    top: 120px;
+    right: 50px;
+  }
+
+  .hablar11,
+  .hablar13 {
+    font-size: 10px;
+    top: 120px;
+    right: 10px;
+  }
+
+  .hablar12,
+  .hablar14 {
+    font-size: 10px;
+    top: 150px;
+    left: 1px;
+  }
+
+  .incorrecto1,
+  .incorrecto2,
+  .incorrecto3,
+  .incorrecto4,
+  .correcto1,
+  .correcto2 {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .incorrecto3 {
+    font-size: 10px;
+  }
+
+  .correcto2b {
+    font-size: 16px;
+  }
+
+  .monstruo4g2,
+  .monstruo4p2 {
+    width: 170px;
+    height: 170px;
+  }
+
+  .monstruo4g2.acomodacentro,
+  .monstruo4p2.acomodacentro {
+    animation: acomodacentro 7s 7s both;
+  }
+
+  @keyframes acomodacentro {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    25% {
+      transform: scale(1.5) translateX(-80px) translateY(100px);
+    }
+    50% {
+      transform: scale(2) translateX(-100px);
+    }
+    100% {
+      transform: scale(2.5) translateX(-120px);
+      opacity: 0;
+    }
+  }
+
+  #mensaje-datos10 {
+    animation: reaparecer2 4s 11s both;
+    font-size: 32px;
+    margin-top: -120px;
+  }
+
+  .stggatocaido,
+  .stgperrocaido {
+    width: 300px;
+    height: 300px;
+  }
+
+  .rise {
+    width: 90%;
+    font-size: 10px;
+  }
+
+  .lookgato,
+  .lookperro {
+    animation: look2 1s 16s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @keyframes look2 {
+    0% {
+      transform: translateX(-1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-90px);
+      opacity: 1;
+    }
+  }
+
+  .lvlgatofinalb,
+  .lvlperrofinalb {
+    width: 170px;
+    height: 170px;
+  }
+
+  .lvlgatofinal,
+  .lvlperrofinal {
+    margin-left: 2px;
+  }
+
+  .monstruo1final,
+  .monstruo2final,
+  .monstruo3final {
+    width: 50px;
+    height: 50px;
+    margin-top: 25px;
+    margin-left: -8px;
+    margin-right: -8px;
+    animation: jefes 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @keyframes jefes {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .monstruo1final.jefesout,
+  .monstruo2final.jefesout,
+  .monstruo3final.jefesout {
+    animation: jefesout 1s ease-in both;
+  }
+
+  @keyframes jefesout {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .salidarelax {
+    font-size: 16px;
+  }
+
+  .end-game p {
+    font-size: 16px;
+  }
+
+  .modal button {
+    margin: 1rem 0;
+  }
+
+  .credits {
+    width: 90%;
+  }
+
+  .wrong1,
+  .wrong2,
+  .wrong4,
+  .wrong5,
+  .wrong6,
+  .wrong7,
+  .wrong8,
+  .wrong9,
+  .wrong10 {
+    top: 150px;
+    left: 30px;
+    font-size: 12px;
+  }
+
+  .okey1,
+  .okey2,
+  .okey4,
+  .okey5,
+  .okey6,
+  .okey7,
+  .okey8,
+  .okeyfinal1,
+  .okeyfinal2,
+  .okeyfinal3,
+  .okeyfinal4,
+  .okeyfinal5,
+  .okeyfinal6,
+  .okeyfinal7,
+  .okeyfinal8,
+  .okeyfinal9,
+  .okeyfinal10,
+  .okeyfinal11 {
+    top: 150px;
+    right: 15px;
+    font-size: 12px;
+  }
+}
+
+/*-----------------------------------------------------Media Queries------------ Smartphone S-----------------------------*/
+@media screen and (max-width: 350px) {
+  .bienvenida h1 {
+    font-size: 38px;
+  }
+
+  .juego-story,
+  .juego-relax {
+    font-size: 16px;
+    padding-right: 10px;
+    padding-left: 10px;
+    line-height: 1.2;
+  }
+
+  button.settings {
+    font-size: 16px;
+  }
+
+  .coded {
+    font-size: 16px;
+    padding-top: 80px;
+  }
+
+  .informacionJuego h3,
+  .modal h2 {
+    font-size: 18px;
+  }
+
+  .howTo {
+    width: 300px;
+    height: 140px;
+  }
+
+  .explicacion {
+    font-size: 16px;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .info1 h3,
+  .info2 h3,
+  .info3 h3,
+  .info4 h3 {
+    font-size: 14px;
+    margin-top: 30px;
+  }
+
+  .info1 p,
+  .info2 p,
+  .info3 p,
+  .info4 p {
+    font-size: 12px;
+    margin-top: 15px;
+  }
+
+  .arrow,
+  .arrow2,
+  .arrow3,
+  .lvlgato1,
+  .lvlperro1,
+  .lvlgato2,
+  .lvlperro2,
+  .lvlgato3,
+  .lvlperro3,
+  .lvlgato4,
+  .lvlperro4 {
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+  }
+
+  .arrow4 {
+    width: 70px;
+    height: 70px;
+    margin-top: 30px;
+  }
+
+  .dormir img,
+  .dormir2 img,
+  .dormir3 img,
+  .dormir4 img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .clauhaus {
+    width: 150px;
+    height: 150px;
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+
+  .gatocierre,
+  .perrocierre {
+    width: 110px;
+    height: 110px;
+    margin-top: 30px;
+  }
+
+  button.personaje1,
+  button.personaje2 {
+    width: 150px;
+    height: 150px;
+  }
+
+  .personajegato,
+  .personajeperro,
+  .personajegatob,
+  .personajeperrob,
+  .personajegatobr,
+  .personajeperrobr,
+  .stg2gato,
+  .stg2gator,
+  .stg2perro,
+  .stg2perror,
+  .stg3gato,
+  .stg3gator,
+  .stg3perro,
+  .stg3perror,
+  .stg4gato,
+  .stg4gator,
+  .stg4perro,
+  .stg4perror {
+    width: 140px;
+    height: 140px;
+  }
+
+  .monstruo1,
+  .monstruo1r,
+  .monstruo2,
+  .monstruo2r {
+    width: 160px;
+    height: 160px;
+  }
+
+  .monstruo3,
+  .monstruo3r,
+  .monstruo4g,
+  .monstruo4gr,
+  .monstruo4p,
+  .monstruo4pr {
+    width: 160px;
+    height: 160px;
+  }
+
+  .monstruogfinal,
+  .monstruopfinal,
+  .monstruogfinalr,
+  .monstruopfinalr,
+  .monstruogfinalb,
+  .monstruopfinalb {
+    width: 160px;
+    height: 160px;
+    margin-right: 2px;
+  }
+
+  .caracteristicasmonstruo1 p,
+  .caracteristicasmonstruo2 p,
+  .caracteristicasmonstruo3 p,
+  .caracteristicasmonstruo4 p {
+    margin-left: 20px;
+    font-size: 16px;
+  }
+
+  .monstruoformafinalg,
+  .monstruoformafinalp {
+    width: 350px;
+    height: 200px;
+    margin-right: 120px;
+  }
+
+  .monstruoformafinalgr,
+  .monstruoformafinalpr {
+    width: 350px;
+    height: 200px;
+    margin-right: 220px;
+  }
+
+  .caracteristicasgato h2,
+  .caracteristicasperro h2 {
+    font-size: 20px;
+  }
+
+  .caracteristicasgato h3,
+  .caracteristicasperro h3 {
+    font-size: 16px;
+  }
+
+  .caracteristicasgato p,
+  .caracteristicasperro p {
+    font-size: 14px;
+  }
+
+  .monstruo2b,
+  .monstruo3b {
+    width: 170px;
+    height: 170px;
+  }
+
+  .peligro {
+    font-size: 42px;
+  }
+
+  .monstruo4g2,
+  .monstruo4p2 {
+    width: 160px;
+    height: 160px;
+  }
+
+  .stggatocaido,
+  .stgperrocaido {
+    width: 280px;
+    height: 280px;
+  }
+
+  .lookgato,
+  .lookperro {
+    width: 480px;
+  }
+
+  .lvlgatofinalb,
+  .lvlperrofinalb {
+    width: 170px;
+    height: 170px;
+  }
+
+  .lvlgatofinal,
+  .lvlperrofinal {
+    margin-left: 2px;
+  }
+
+  .monstruo1final,
+  .monstruo2final,
+  .monstruo3final {
+    width: 45px;
+    height: 45px;
+    margin-top: 25px;
+    margin-left: -8px;
+    margin-right: -8px;
+    animation: jefes 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+}

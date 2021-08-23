@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Odyssey</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo|Archivo+Narrow:400,600"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <link  rel="icon" href="https://bit.ly/3nmcRMv" type="image/png">
+    <link href="odyssey.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!--Pantalla de bienvenida-->
+    <div id="bienvenida" class="bienvenida">
+      <h1>Odyssey</h1>
+      <div class="bienvenida-botones">
+        <button id="juego-story" class="juego-story">Story mode</button> <!--"juego-normal"-->
+        <button id="juego-relax" class="juego-relax">Arcade mode</button>   <!--"juego-arcade"-->
+      </div>
+      <button id="settings" class="settings">How to play</button>
+      <div id="coded" class="coded">Coded by <a href="https://bit.ly/2Ltq6wH"><b> 'ClauHaus'</b></a></div>
+    </div>
+    <section id="pantalla-settings" class="pantalla-settings">
+    <div id="informacionJuego" class="informacionJuego">
+      <h3>How to play Odyssey</h3>
+      <img id="howTo" class="howTo" src="https://bit.ly/3892Dsf">
+      <p class="explicacion">In order to clear the levels in Odyssey you must flip the "cards" by clicking them
+        and match the pairs, taking in consideration the "remaining moves" (how many mistakes you can make) which
+        are going to get lower as long as you mismatch the pairs of cards, and the "remaining time".
+        When you match correctly a pair of cards the "moves to win" is going to go lower, when that indicator
+        reaches "0" that means you just cleared the level and you can move into the next one.
+      </p>
+    </div> 
+    <button id="back3" class="back3">Go back to main screen</button>
+    </section>
+    <section id="pantalla-uno" class="pantalla-uno">
+      <div id="datos" class="datos">
+        <p>"Waking up in an unknown location by a piercing cold,  your only option at the moment is venturing  deeper into
+            the dark cave you found yourself into. If you dare to go further inside and face the dangers and tribulations that may come i must ask you first:</p>
+            <form id="formulario" class="formulario">
+            <label for="nombre">
+              <input type="text" id="nombre" class="nombre" placeholder="What is your name?" required/>
+          </label>
+          <label>
+              <input type="number" id="fecha" class="fecha" placeholder="What year were you born?" min="1900" max="2020" required/>
+          </label>
+          <button type="submit" class="boton" id="boton">Go deeper into the cave</button>
+          </form>
+    </section>
+    <!--Elementos visuales-->    
+    <header class="cabecera">
+      <div id="campeon" class="campeon">
+        <div id="errorescontenedor" class="contador-item">
+          <h4 id="movimientos" class="cabecera-titulo"></h4>
+          <div class="cabecera-num">
+            <span id="errores" class="errores">00</span>/<span id="errores-total">20</span>
+            <h4 id="movimientosr" class="titulorelax">HITS</h4>
+          </div>
+        </div>
+      </div>
+      <div id="numeros" class="numeros">
+        <div class="nivel">
+          <h4 id="situacion" class="cabecera-titulo">Level <span id="nivel">01</span></h4>
+        </div>
+        <div id="cronometro" class="contador-item">
+          <h4 id="tiempo" class="cabecera-titulo">Time</h4>
+          <div id="timer" class="cabecera-num">
+            <span id="minutos">00</span>:<span id="segundos">00</span>
+          </div>
+        </div>
+      </div>
+      <div id="enemigo" class="enemigo">
+        <div id="aciertoscontenedor" class="contador-item">
+          <h4 id="contrincante" class="cabecera-titulo"></h4>
+          <div class="cabecera-num">
+            <span id="aciertos" class="aciertos">00</span>/<span id="aciertos-total">00</span>
+            <h4 id="contrincanter" class="titulorrelax">ERRORS</h4>
+          </div>
+        </div>
+      </div>
+      <button id="control-nivel" class="control-nivel">…</button>
+    </header>
+    <h3 id="avatar" class="avatar"><u>Select your avatar</u></h3>
+    <div id="mensaje-datos"></div>
+    <!--Segmento de "level ups"-->
+    <h2 id="leveling" class="leveling">Level up</h2>
+    <div id="levelup" class="levelup">
+      <div id="info1" class="info1">
+        <img id="lvlgato1" class="lvlgato1" src="https://bit.ly/3r9EieS">
+        <img id="lvlperro1" class="lvlperro1" src="https://bit.ly/37iMh14">
+        <h3>Lvl. 1</h3>
+        <p>HP: 5/21</p>
+        <p>MP: 4/12</p>
+      </div>
+      <img id="arrow" class="arrow" src="https://bit.ly/3gR7OBh">
+      <div id="info2" class="info2">
+        <img id="lvlgato2" class="lvlgato2" src="https://bit.ly/3af0puo">
+        <img id="lvlperro2" class="lvlperro2" src="https://bit.ly/3gR6C0x">
+        <h3>Lvl. 2</h3>
+        <p>HP: 8/21</p>
+        <p>MP: 6/12</p>
+      </div>
+      <img id="arrow2" class="arrow2" src="https://art.pixilart.com/c8d8302b1db4dde.gif">
+      <div id="info3" class="info3">
+        <img id="lvlgato3" class="lvlgato3" src="https://bit.ly/3gRwrxS">
+        <img id="lvlperro3" class="lvlperro3" src="https://bit.ly/3oVs4V2">
+        <h3>Lvl. 3</h3>
+        <p>HP: 12/21</p>
+        <p>MP: 8/12</p>
+      </div>
+      <img id="arrow3" class="arrow3" src="https://bit.ly/34fGMi1">
+      <div id="info4" class="info4">
+        <img id="lvlgato4" class="lvlgato4" src="https://bit.ly/2Wfoucf">
+        <img id="lvlperro4" class="lvlperro4" src="https://bit.ly/3gMv7MC">
+        <h3>Lvl. 4</h3>
+        <p>HP: 18/21</p>
+        <p>MP: 10/12</p>
+      </div>
+      <img id="arrow4" class="arrow4" src="https://bit.ly/34c2sv5">
+      <div id="info5" class="info5">
+        <img id="monstruo4g2" class="monstruo4g2" src="https://bit.ly/3nq8QGP">
+        <img id="monstruo4p2" class="monstruo4p2" src="https://bit.ly/2Kv3HhX">
+      </div>
+      <div id="info6" class="info6">
+        <img id="lvlgatofinal" class="lvlgatofinal" src="https://bit.ly/2IRnjfT">
+        <img id="lvlperrofinal" class="lvlperrofinal" src="https://bit.ly/2Ltr5gn">
+        <h3>Max level</h3>
+        <p>HP: 21/21</p>
+        <p>MP: 12/12</p>
+      </div>
+    </div>
+    <button id="next3" class="next3">Continue</button>
+    <button id="next5" class="next5">Continue</button>
+    <button id="next9" class="next9">Continue</button>
+    <button id="next13" class="next13">Continue</button>
+    <div id="mensajesemifinal" class="mensajesemifinal">This is far from over!</div>
+    <button id="next14" class="next14">...</button>
+    <!--Nivel 2-->
+    <div id="stage2" class="stage2">
+      <img id="stg2gato" class="stg2gato" src="https://bit.ly/3a8trvA">
+      <img id="stg2gator" class="stg2gator" src="https://bit.ly/2Wiljk8">
+      <img id="stg2perro" class="stg2perro" src="https://bit.ly/3oSvjg3"> 
+      <img id="stg2perror" class="stg2perror" src="https://art.pixilart.com/89649e9735a2492.gif">
+      <img id="monstruo2" class="monstruo2" src="https://bit.ly/2WetWMx">
+      <img id="monstruo2r" class="monstruo2r" src="https://bit.ly/38ay85i">
+    </div>
+    <div id="mensaje-datos2" class="mensaje-datos2"></div>
+    <div id="opciones3" class="opciones3">
+      <div id="hablar1" class="hablar1">Verify this paperwork</div>
+      <div id="hablar2" class="hablar2">Sign this documents</div>
+      <div id="hablar3" class="hablar3">Sign, certify, send!</div>
+      <div id="hablar4" class="hablar4">Zoom in!</div>
+      <div id="hablar4mob" class="hablar4mob">ROTATE YOUR PHONE!</div>
+      <div id="hablar5" class="hablar5">Zoom out again "'Ctrl' + '-'"</div>
+      <div id="hablar5mob" class="hablar5mob">ROTATE YOU PHONE AGAIN!</div>
+      <button id="opcion-pelear2" class="opcion-pelear2">Defend your case!</button>
+      <button id="opcion-pelear3" class="opcion-pelear3">First, sign this!</button>
+      <button id="opcion-pelear4" class="opcion-pelear4">Now, certify this!</button>
+      <button id="opcion-pelear5" class="opcion-pelear5">And then, stamp this!</button>
+      <button id="opcion-pelear6" class="opcion-pelear6">Send this form!</button>
+      <div id="opcion-pelear7" class="opcion-pelear7">You should always be careful with the fine print and check it...RESIZE THE SCREEN "Press 'ctrl' + '+'"</div>
+      <div id="opcion-pelear7mob" class="opcion-pelear7mob">You should always be careful with the fine print and check it...ROTATE THE SCREEN of your phone and then ROTATE IT BACK AGAIN (also check if you have this option activated otherwise activate it first, i'll wait...)</div>
+      <button id="opcion-pelear8" class="opcion-pelear8">Fight your case!</button>
+      <img id="monstruo2b" class="monstruo2b" src="https://bit.ly/3mjJBoo">
+      <div id="caracteristicasmonstruo2" class="caracteristicasmonstruo2"></div>
+    </div>
+    <button id="subir2" class="subir2">FIGHT!</button>
+    <!--Nivel 3-->
+    <div id="stage3" class="stage3">
+      <img id="stg3gato" class="stg3gato" src="https://bit.ly/3oP6Nw8">
+      <img id="stg3gator" class="stg3gator" src="https://bit.ly/3oNSBDI">
+      <img id="stg3perro" class="stg3perro" src="https://bit.ly/34fubvg"> 
+      <img id="stg3perror" class="stg3perror" src="https://bit.ly/38cFcyC"> 
+      <img id="monstruo3" class="monstruo3" src="https://bit.ly/3mgdqWM">
+      <img id="monstruo3r" class="monstruo3r" src="https://bit.ly/3qYrwQb">
+    </div>
+    <div id="mensaje-datos3" class="mensaje-datos3"></div>
+    <div id="hablar6" class="hablar6">Just another pic</div>
+    <div id="hablar7" class="hablar7">Different angle</div>
+    <div id="hablar8" class="hablar8">Need extra filter</div>
+    <div id="hablar9" class="hablar9">One more!</div>
+    <img id="phone" class="phone" ondragstart="dragStart(event)" draggable="true"  src="https://bit.ly/3gQj8gV">
+    <div id="telefono" class="telefono">Hurry up, 'GRAB HER PHONE' before she start to take a zillion selfies and posting them in every single social app!</div>
+    <div id="telefonomob" class="telefonomob">Hurry up, 'CLICK HER PHONE to deactivate it' before she start to take a zillion selfies and posting them in every single social app!</div>
+    <img id="trash" class="trash" ondrop="drop(event)" ondragover="allowDrop(event)" src="https://bit.ly/383HD6t">
+    <button id="next7" class="next7">Continue</button>
+  </div>
+    <button id="next6" class="next6">Unfollow!</button>
+    <div id="opciones4" class="opciones4">
+      <img id="monstruo3b" class="monstruo3b" src="https://bit.ly/3mgdKEY">
+      <div id="caracteristicasmonstruo3" class="caracteristicasmonstruo3"></div>
+    </div>
+    <button id="subir3" class="subir3">FIGHT!</button>
+    <!--Nivel 4-->
+    <div id="stage4" class="stage4">
+      <img id="stg4gato" class="stg4gato" src="https://bit.ly/3p0yMtb">
+      <img id="stg4gator" class="stg4gator" src="https://bit.ly/3nmU0Ru">
+      <img id="stg4perro" class="stg4perro" src="https://bit.ly/34fDATq"> 
+      <img id="stg4perror" class="stg4perror" src="https://bit.ly/34iNbce"> 
+      <img id="monstruo4g" class="monstruo4g" src="https://bit.ly/3mgdQMQ">
+      <img id="monstruo4gr" class="monstruo4gr" src="https://bit.ly/3gQjjJ7">
+      <img id="monstruo4p" class="monstruo4p" src="https://bit.ly/3gSPMyG">
+      <img id="monstruo4pr" class="monstruo4pr" src="https://bit.ly/3nqpJkS">
+    </div>
+    <div id="mensaje-datos4" class="mensaje-datos4"></div>
+    <div id="mensaje-datos5" class="mensaje-datos5"></div>
+    <div id="hablar10" class="hablar10">Choose carefully</div>
+    <div id="mensaje-datos6" class="mensaje-datos6">
+    <p>Who am i? 'Copy and paste' your answer from the options below:</p>
+    <input id="incorrecto1" class="incorrecto1" type="text" value="Me!">
+    <input id="incorrecto2" class="incorrecto2"type="text" value="You!">
+    <input id="incorrecto3" class="incorrecto3"type="text" value="The avatar i didn't choose?">
+    <input id="incorrecto4" class="incorrecto4"type="text" value="'Bureaucrat' again?">
+    <input id="correcto1" class="correcto1"type="text" value="I give up">
+    <label id="correcto2b" class="correcto2b" for="correcto2">I wanna hear you saying...</label>
+    <input id="correcto2" class="correcto2"type="text" value="">
+    </div>
+    <div id="mensaje-datos7" class="mensaje-datos7">
+      <p>I give up? Did you see? It wasn't that hard, anyways it is not going to be that simple for you...</p>
+    <button id="next11" class="next11">Continue?</button>
+  </div>
+    <button id="next10" class="next10">Go and take a closer look</button>
+    <div id="opciones5" class="opciones5">
+      <img id="monstruo4gb" class="monstruo4gb" src="https://bit.ly/3nlx5Gh">
+      <img id="monstruo4pb" class="monstruo4pb" src="https://bit.ly/2Wfpn4z">
+      <div id="caracteristicasmonstruo4" class="caracteristicasmonstruo4"></div>
+    </div>
+    <button id="subir4" class="subir4">FIGHT!</button>
+  <!--Nivel 5-->
+  <div id="stage5" class="stage5">
+    <img id="stggatocaido" class="stggatocaido" src="https://bit.ly/34hOFU5">
+    <img id="stgperrocaido" class="stgperrocaido" src="https://bit.ly/3msx3ew"> 
+    <img id="lvlgatofinalb" class="lvlgatofinalb" src="https://bit.ly/37jjrxx">
+    <img id="lvlgatofinalbr" class="lvlgatofinalbr" src="https://bit.ly/3mhtbg1">
+    <img id="lvlperrofinalb" class="lvlperrofinalb" src="https://bit.ly/2IRoLil">
+    <img id="lvlperrofinalbr" class="lvlperrofinalbr" src="https://bit.ly/3oP7WUs">
+    <img id="monstruo1final" class="monstruo1final"src="https://bit.ly/2WhRKiu"> 
+    <img id="monstruo2final" class="monstruo2final" src="https://bit.ly/3ae8T4U">
+    <img id="monstruo3final" class="monstruo3final" src="https://bit.ly/3nhi0W5">
+    <img id="monstruogfinal" class="monstruogfinal" src="https://bit.ly/3nyMJ0M">
+    <img id="monstruogfinalr" class="monstruogfinalr" src="https://bit.ly/34iO0BQ">
+    <img id="monstruopfinal" class="monstruopfinal" src="https://bit.ly/2WjpfkA"> 
+    <img id="monstruopfinalr" class="monstruopfinalr" src="https://bit.ly/37ZnG0k"> 
+    <img id="monstruoformafinalg" class="monstruoformafinalg" src="https://bit.ly/385pmWh">
+    <img id="monstruoformafinalgr" class="monstruoformafinalgr" src="https://bit.ly/381PHEG">
+    <img id="monstruoformafinalp" class="monstruoformafinalp" src="https://bit.ly/3mlmYje">
+    <img id="monstruoformafinalpr" class="monstruoformafinalpr" src="https://bit.ly/3gM5ZFK">
+  </div>
+  <div id="mensaje-datos8" class="mensaje-datos8"></div>
+  <div id="mensaje-datos9" class="mensaje-datos9"></div>
+  <div id="mensaje-datos10" class="mensaje-datos10"></div>
+  <div id="mensaje-datos11" class="mensaje-datos11"></div>
+  <div id="hablar11" class="hablar11">Keep holding the Enter</div>
+  <div id="hablar12" class="hablar12">Just a little bit longer</div>
+  <div id="hablar13" class="hablar13">C'mon! We can do it!</div>
+  <div id="hablar14" class="hablar14">Almost there</div>
+  <input type="text" id="rise" class="rise" placeholder="Press and hold the 'ENTER KEY'">
+  <div id="lookg" class="lookg"><img id="lookgato" class="lookgato" src="https://bit.ly/2KpwULw"></div>
+  <div id="lookp" class="lookp"><img id="lookperro" class="lookperro" src="https://bit.ly/2JX56yf"></div>
+  <button id="next15" class="next15">Continue</button>
+  <button id="next16" class="next16">Face your dark side</button>
+  <button id="next18" class="next18">Don't step back</button>
+  <button id="next17" class="next17">Continue</button>
+  <div id="opciones6" class="opciones6">
+    <img id="monstruogfinalb" class="monstruogfinalb" src="https://bit.ly/3nyMJ0M">
+    <img id="monstruopfinalb" class="monstruopfinalb" src="https://bit.ly/2WjpfkA">
+    <div id="caracteristicasmonstruo5" class="caracteristicasmonstruo5"></div>
+  </div>
+  <button id="subir5" class="subir5">FIGHT!</button>
+  <!--Cierre-->
+  <div id="stage6" class="stage6">
+    <img id="gatocierre" class="gatocierre" src="https://bit.ly/34fEGP2">
+    <img id="clauhaus" class="clauhaus" src="https://bit.ly/3nntHdY">
+    <img id="perrocierre" class="perrocierre" src="https://bit.ly/2IP9RZU"> 
+  </div>
+  <div id="mensaje-datosfinal" class="mensaje-datosfinal"></div>
+  <div id="mensaje-creditos" class="mensaje-creditos"></div>
+  <p id="miweb" class="miweb">Coded by <a href="https://bit.ly/383XPVf"><b> 'ClauHaus'</b></a></p>
+  <button id="credits" class="credits">Roll the credits</button>
+  <button id="replay" class="replay">Replay the game</button>
+  <button id="replayrelax" class="replayrelax">Try the Story mode</button>
+  <div id="heroes" class="heroes"> <!--aka Stage1-->
+  <button id="personaje1" class="personaje1">
+      <img id="personajegato" class="personajegato" src="https://bit.ly/3qW3TaW">
+  </button>
+    <div id="caracteristicasgato" class="caracteristicasgato"></div>
+  <button id="personaje2" class="personaje2">
+      <img id="personajeperro" class="personajeperro" src="https://bit.ly/3qZvDvm">
+  </button>
+    <div id="caracteristicasperro" class="caracteristicasperro"></div>
+    <img id="personajegatob" class="personajegatob" src="https://bit.ly/3qW3TaW">
+    <img id="personajegatobr" class="personajegatobr" src="https://bit.ly/3nnUOp5">
+    <img id="personajeperrob" class="personajeperrob" src="https://bit.ly/3qZvDvm">
+    <img id="personajeperrobr" class="personajeperrobr" src="https://bit.ly/3nhj5gB">
+    <img id="monstruo1" class="monstruo1"src="https://bit.ly/3oTyPqr">
+    <img id="monstruo1r" class="monstruo1r" src="https://bit.ly/37iVlTQ">
+    <div id="caracteristicasmonstruo1" class="caracteristicasmonstruo1"></div>
+  </div>
+  <!--Elementos visuales dentro de las batallas-->
+  <div id="versus" class="versus">FIGHT!</div>
+  <div id="peligro" class="peligro">DANGER</div>
+  <div id="okey1" class="okey1"></div>
+  <div id="okey2" class="okey2"></div>
+  <div id="okey4" class="okey4"></div>
+  <div id="okey5" class="okey5"></div>
+  <div id="okey6" class="okey6"></div>
+  <div id="okey7" class="okey7"></div>
+  <div id="okey8" class="okey8"></div>
+  <div id="okeyfinal1" class="okeyfinal1"></div>
+  <div id="okeyfinal2" class="okeyfinal2"></div>
+  <div id="okeyfinal3" class="okeyfinal3"></div>
+  <div id="okeyfinal4" class="okeyfinal4"></div>
+  <div id="okeyfinal5" class="okeyfinal5"></div>
+  <div id="okeyfinal6" class="okeyfinal6"></div>
+  <div id="okeyfinal7" class="okeyfinal7"></div>
+  <div id="okeyfinal8" class="okeyfinal8"></div>
+  <div id="okeyfinal9" class="okeyfinal9"></div>
+  <div id="okeyfinal10" class="okeyfinal10"></div>
+  <div id="okeyfinal11" class="okeyfinal11"></div>
+  <div id="wrong1" class="wrong1"></div>
+  <div id="wrong2" class="wrong2"></div>
+  <div id="wrong4" class="wrong4"></div>
+  <div id="wrong5" class="wrong5"></div>
+  <div id="wrong6" class="wrong6"></div>
+  <div id="wrong7" class="wrong7"></div>
+  <div id="wrong8" class="wrong8"></div>
+  <div id="wrong9" class="wrong9"></div>
+    <div id="botonera" class="botonera">
+    <button id="back1" class="back1">Back to the selection screen</button>
+    <button id="next1" class="next1">Select this avatar</button>
+  </div>
+    <div id="mensaje1" class="mensaje1"></div>
+    <div id="mensaje2" class="mensaje2"></div>
+    <div id="opciones1" class="opciones1">
+      <button id="opcion-a" class="opcion-a">Run back to the beginning of the cave</button>
+      <button id="opcion-b" class="opcion-b">Fight that sucker!</button>
+      <button id="opcion-c" class="opcion-c">Go to sleep, you are just too tired</button>
+    </div>
+    <div id="dormir" class="dormir"><img src="https://bit.ly/3af38E8"></div>
+    <div id="dormir2" class="dormir2"><img src="https://bit.ly/3nqrbDQ"></div>
+    <div id="dormir3" class="dormir3"><img src="https://bit.ly/3acmkSG"></div>
+    <div id="dormir4" class="dormir4"><img src="https://bit.ly/3mfzIYM"></div>
+    <div id="opciones2" class="opciones2">
+    <button id="opcion-pelear" class="opcion-pelear">Go back and fight that sucker!</button>
+    <button id="opcion-dormir" class="opcion-dormir">Continue sleeping zzzzz</button>
+    </div>
+    <button id="opcion-decision" class="opcion-decision">FIGHT!</button>
+    <main>
+      <div id="mesa" class="mesa"></div>
+      <div id="subeNivel" class="sube-nivel">
+        <div class="modal">
+          <h2>¡Great, you did it!</h2>
+          <img id="exito" class="exito" src="https://bit.ly/37nu82p">
+          <img id="medal" class="medal" src="https://bit.ly/37jkXQf">
+          <button id="next2">Go deeper into the cave</button> <!--//en caso de no funcionar volver a poner aca-->
+          <button id="next4">Go deeper into the cave</button>
+          <button id="next8">Go deeper into the cave</button>
+          <button id="next12">Go deeper into the cave</button>
+          <button id="next1relax">Continue</button>
+          <button class="reiniciar">Try again</button>
+        </div>
+      </div>
+      <button id="subir">Fight</button> <!--//IMPORTANTE!!!!!!!!!!!!!!!!!!-->
+      <div id="gameOver" class="game-overg">
+        <div class="modal">
+          <h2>¡Oh no!</h2>
+          <p>You have run out of moves</p>
+          <img src="https://bit.ly/3r2i4v1" class="skull">
+          <button class="reiniciar">Try again</button>
+        </div>
+      </div>
+      <div id="timeOver" class="game-overt">
+        <div class="modal">
+          <h2>¡Oh no!</h2>
+          <p>You have run out of time</p>
+          <img src="https://bit.ly/3gQlg8p" class="reloj">
+          <button class="reiniciar">Try again</button>
+        </div>
+      </div>
+      <div id="endGame" class="end-game">
+        <div class="modal">
+          <h2>Congratulations!</h2>
+          <p id="salidarelax" class="salidarelax">The exit of the cave is in front of you...</p>
+          <img id="salida" class="salida" src="https://bit.ly/3nsqYQA" >
+          <img id="exitorelax" class="exitorelax" src="https://bit.ly/37nu82p">
+          <button id="next19">Leave this place</button> <!--FINAL!-->
+          <button id="creditosrelax" class="creditosrelax">Roll the credits</button>
+          <button class="reiniciar">Try again</button>
+        </div>
+      </div>
+    </main>
+    <div class="selecciona-nivel">
+      <button id="cierra-niveles" class="cierra-niveles">&times;</button>
+      <ul></ul>
+    </div>
+    <div id="cuadro1" class="cuadro1">gato</div>
+    <div id="cuadro2" class="cuadro2">perro</div>
+    <!--Sonidos "no funcionan en CodePen" asi que estan desactivados-->
+    <audio src="sonidos/acierto.mp3" class="sonido" id="sonido-acierto" preload="auto"></audio>
+    <audio src="sonidos/error.mp3"   class="sonido" id="sonido-error"   preload="auto"></audio>
+    <audio src="sonidos/carta.mp3"   class="sonido" id="sonido-carta"   preload="auto"></audio>
+    <!--Scripts de JS-->
+    <script src="variables-globales.js"></script>
+    <script src="descubrir-comparar.js"></script>
+    <script src="baraja-reparte.js"></script>
+    <script src="game-over.js"></script>
+    <script src="acierto-error.js"></script>
+    <script src="cronometro.js"></script>
+    <script src="finalizar.js"></script>
+    <script src="cambia-nivel.js"></script>
+    <script src="menu-niveles.js"></script>
+    <script src="iniciar.js"></script>
+    <script src="comienza-juego.js"></script>
+  </body>
+</html>
